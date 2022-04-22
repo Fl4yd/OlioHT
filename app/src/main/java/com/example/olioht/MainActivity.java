@@ -23,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
         String JerePliisUpdate;
         String JereCommitAndPush;
         String VittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituu;
-
+        String juu;
     }
 }
