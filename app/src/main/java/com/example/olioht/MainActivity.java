@@ -17,5 +17,9 @@ public class MainActivity extends AppCompatActivity {
         String gbilöäw;
         String G;
         String JereNäätköTän;
+        String VitunGitHub;
+        String VittuMitäPAskaa;
+        String Vittu69696969696969696969;
+
     }
 }
