@@ -10,19 +10,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("MOI");
-        String kebab;
-        String joojgintncrn;
-        String ok;
-        String gbilöäw;
-        String G;
-        String JereNäätköTän;
-        String VitunGitHub;
-        String VittuMitäPAskaa;
-        String Vittu69696969696969696969;
-        String JerePliisUpdate;
-        String JereCommitAndPush;
-        String VittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituu;
 
     }
 }
