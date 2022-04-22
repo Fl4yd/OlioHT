@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
         String ok;
         String gbilöäw;
         String G;
+        String JereNäätköTän;
     }
 }
