@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("MOI");
         String kebab;
         String joojgintncrn;
+        String ok;
     }
 }
