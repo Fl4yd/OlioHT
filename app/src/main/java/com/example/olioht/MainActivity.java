@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         String VitunGitHub;
         String VittuMitäPAskaa;
         String Vittu69696969696969696969;
+        String JerePliisUpdate;
+        String JereCommitAndPush;
+        String VittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituuVittuvittuvittuvituu;
 
     }
 }
