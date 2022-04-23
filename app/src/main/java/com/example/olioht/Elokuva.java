@@ -12,4 +12,15 @@ public class Elokuva {
     private int ID;
     private String kuvateksti;
 
+    public Elokuva(String nimi, String aika, int julkaisuvuosi, int kesto, int ikaRaja, ArrayList<String> genret, int ID, String kuvateksti) {
+        this.nimi = nimi;
+        this.aika = aika;
+        this.julkaisuvuosi = julkaisuvuosi;
+        this.kesto = kesto;
+        this.ikaRaja = ikaRaja;
+        this.genret = genret;
+        this.ID = ID;
+        this.kuvateksti = kuvateksti;
+    }
+
 }
