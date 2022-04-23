@@ -54,7 +54,7 @@ public class Elokuva {
         this.ID = ID;
     }
 
-    public ArrayList getGenres() { return genres; }
+    public ArrayList<String> getGenres() { return genres; }
     public void setGenres(String genres) { this.genres = genres; }
 
     public String getPicText() {
