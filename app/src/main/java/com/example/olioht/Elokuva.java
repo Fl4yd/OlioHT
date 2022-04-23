@@ -55,7 +55,7 @@ public class Elokuva {
     }
 
     public ArrayList<String> getGenres() { return genres; }
-    public void setGenres(String genres) { this.genres = genres; }
+    public void setGenres(ArrayList genres) { this.genres = genres; }
 
     public String getPicText() {
         return picText;
