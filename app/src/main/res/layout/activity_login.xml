@@ -34,32 +34,40 @@
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:layout_constraintWidth_percent="0.2" />
 
-    <ImageView
+
+
+    <Button
+        android:id="@+id/register"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:text="Create account"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintHeight_percent="0.1"/>
+        app:layout_constraintHeight_percent="0.05"
+        android:background="@drawable/vie_bg"
+        />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/login_btn"
-        android:text="Login"
-        android:textSize="18sp"
         android:backgroundTint="@color/white_a"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintHeight_percent="0.07"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.01"
 
-        />
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintWidth_percent="0.6" />
 
 
 
@@ -84,6 +92,53 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="180dp"
         app:layout_constraintGuide_percent="0.23"/>
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:hint="Username"
+
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.65"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textSize="30dp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
