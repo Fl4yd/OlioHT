@@ -2,11 +2,13 @@ package com.example.olioht;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -21,7 +23,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+        button = findViewById(R.id.kirjautumisSivu);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                KirjautumisSivu();
+            }
+        });
 
+    }
+    public void KirjautumisSivu() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
     public void readXML (View v) {
         try {
