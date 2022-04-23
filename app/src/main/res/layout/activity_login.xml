@@ -48,18 +48,19 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/login_btn"
+        android:backgroundTint="@color/white_a"
         android:text="Login"
         android:textSize="18sp"
-        android:backgroundTint="@color/white_a"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintHeight_percent="0.07"
+        app:iconTint="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.01"
 
-        />
+        app:layout_constraintWidth_percent="0.6"
+        app:rippleColor="#F44336" />
 
 
 
