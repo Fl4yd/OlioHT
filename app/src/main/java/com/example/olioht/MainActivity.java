@@ -2,6 +2,7 @@ package com.example.olioht;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
+    private Button pbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +43,21 @@ public class MainActivity extends AppCompatActivity {
                 KirjautumisSivu();
             }
         });
+        pbutton = findViewById(R.id.profilebutton);
+        pbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View p) {
+                ProfilePage();
+            }
+        });
 
     }
     public void KirjautumisSivu() {
         Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+    public void ProfilePage() {
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
     public void readXML (View v) {
