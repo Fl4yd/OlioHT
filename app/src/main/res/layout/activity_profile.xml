@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/gradient_background"
     tools:context=".ProfileActivity">
 
     <Spinner
@@ -135,9 +135,9 @@
         android:layout_width="300dp"
         android:layout_height="54dp"
         android:text="Profile"
-        android:textSize="40sp"
         android:textAlignment="center"
         android:textColor="#ffc800"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
