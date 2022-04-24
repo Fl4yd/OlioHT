@@ -13,8 +13,7 @@
         <entry key="app/src/main/res/drawable/vie_bg.xml" value="0.202" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.12962962962962962" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17028985507246377" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_reviews.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
       </map>
     </option>
   </component>

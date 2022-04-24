@@ -22,7 +22,9 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         outputField = findViewById(R.id.textView4);
 
+
     }
+
 
     public void buttonpress (View v){
         Spinner mySpinner = findViewById(R.id.theatreSpinner);
