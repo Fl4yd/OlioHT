@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KirjautumisSivu();
+                LoginPage();
             }
         });
         pbutton = findViewById(R.id.profilebutton);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void KirjautumisSivu() {
+    public void LoginPage() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }

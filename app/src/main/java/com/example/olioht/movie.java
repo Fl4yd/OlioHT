@@ -41,7 +41,7 @@ public class movie {
     public void setID(int ID) { this.ID = ID; }
 
     public ArrayList<String> getGenres() { return genres; }
-    public void setGenres(ArrayList genres) { this.genres = genres; }
+    public void setGenres(ArrayList<String> genres) { this.genres = genres; }
 
     public String getPicText() { return picText; }
     public void setPicText(String picText) { this.picText = picText; }
