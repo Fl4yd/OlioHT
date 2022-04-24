@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/gradient_background"
+        tools:context=".HistoryActivity">
+
+        <ImageView
+            android:id="@+id/imagebackground"
+            android:layout_width="352dp"
+            android:layout_height="255dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/historyTitle"
+            app:srcCompat="@drawable/profile_taustanelio_bg" />
+
+        <TextView
+            android:id="@+id/historyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:textSize="35sp"
+            android:textColor="@color/yellow_200"
+            android:textStyle="bold"
+            android:text="Movie History"
+            app:layout_constraintBottom_toTopOf="@id/imageView4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="150dp"
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="465dp"
+            tools:srcCompat="@drawable/NoTimeToDie_1080final"
+            app:layout_constraintTop_toTopOf="@id/imagebackground"
+            app:layout_constraintLeft_toLeftOf="@id/imagebackground"
+            app:layout_constraintRight_toRightOf="@id/imagebackground"
+            app:layout_constraintBottom_toBottomOf="@id/imagebackground"/>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="170dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="'Movie name(string)' \n Your score: string \n User score: string"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/imagebackground"
+            app:layout_constraintLeft_toRightOf="@id/imageView4"
+            app:layout_constraintRight_toRightOf="@id/imagebackground"
+            app:layout_constraintTop_toTopOf="@id/imagebackground" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
