@@ -57,9 +57,9 @@ public class ViewActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String str = names[i].toString();
+                int id = movies.get(i).getID();
                 Intent intent = new Intent(getApplicationContext(), MovieActivity.class);
-                intent.putExtra("name", str);
+                intent.putExtra("id", id);
                 startActivity(intent);
             }
         });
@@ -109,7 +109,7 @@ public class ViewActivity extends AppCompatActivity {
                     picText = element.getElementsByTagName("ShowURL").item(0).getTextContent();
                     picURL = element.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
                     movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL));
-
+                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL));
                 }
             }
 

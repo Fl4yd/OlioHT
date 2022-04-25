@@ -11,97 +11,104 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/gradient_background" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="104dp"
-        android:layout_height="19dp"
-        android:text="@string/movie_name"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
-        tools:textAlignment="center"
-        tools:textColor="#FFC800" />
-
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="63dp"
-        android:layout_height="22dp"
-        android:text="Agelimit:"
+        android:id="@+id/movie_name"
+        android:layout_width="100dp"
+        android:layout_height="23dp"
+        android:text="Movie name"
+        android:textColor="@color/yellow_200"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:maxLines="3"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.273"
-        tools:textColor="#FFC800" />
+        app:layout_constraintVertical_bias="0.2"
+        />
 
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="39dp"
-        android:layout_height="21dp"
-        android:text="Year:"
+        android:layout_width="54dp"
+        android:layout_height="23dp"
+        android:text="AgeLimit:"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382"
-        tools:textColor="#FFC800" />
+        app:layout_constraintVertical_bias="0.3" />
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="54dp"
+        android:layout_height="23dp"
+        android:text="yearActors:"
+        android:textColor="@color/yellow_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="54dp"
         android:layout_height="23dp"
-        android:text="Actors:"
-        android:textColor="#FFC800"
+        android:text="Duration:"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="67dp"
         android:layout_height="22dp"
-        android:text="Producer:"
-        android:textColor="#FFC800"
+        android:text="Actors:"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="64dp"
-        android:layout_height="25dp"
-        android:text="Duration:"
+        android:id="@+id/textView15"
+        android:layout_width="54dp"
+        android:layout_height="23dp"
+        android:text="Producers:"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:textColor="#FFC800" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reviews"
-        android:textColor="#FFC800"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,65 +117,70 @@
         tools:textAlignment="center" />
 
     <TextView
-        android:layout_width="59dp"
-        android:layout_height="21dp"
+        android:id="@+id/ageLimit"
+        android:layout_width="107dp"
+        android:layout_height="23dp"
         android:text="@string/age_limit"
-        android:textColor="#FFC800"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.3" />
 
 
     <TextView
+        android:id="@+id/productionYear"
         android:layout_width="107dp"
         android:layout_height="23dp"
         android:text="@string/production_year"
-        android:textColor="#FFC800"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
+        android:id="@+id/duration"
         android:layout_width="107dp"
         android:layout_height="23dp"
         android:text="@string/duration"
-        android:textColor="#FFC800"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
+        android:id="@+id/actors"
         android:layout_width="107dp"
         android:layout_height="23dp"
         android:text="@string/actors"
-        android:textColor="#FFC800"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
+        android:id="@+id/producers"
         android:layout_width="107dp"
         android:layout_height="23dp"
         android:text="@string/producer"
-        android:textColor="#FFC800"
+        android:textColor="@color/yellow_200"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <ImageView
         android:id="@+id/imageView5"
