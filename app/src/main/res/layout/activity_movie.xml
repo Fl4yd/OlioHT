@@ -20,7 +20,8 @@
     <TextView
         android:id="@+id/movie_name"
         android:layout_width="100dp"
-        android:layout_height="23dp"
+        android:layout_height="50dp"
+        android:gravity="center"
         android:text="Movie name"
         android:textColor="@color/yellow_200"
         android:textSize="15dp"

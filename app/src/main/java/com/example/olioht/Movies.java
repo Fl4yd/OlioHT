@@ -25,12 +25,7 @@ public class Movies {
     }
     public movie searchMovie(int ID) {
         movie Movie = movies.get(ID);
-        if(Movie != null) {
-            return Movie;
-        }
-        else {
-            return null;
-        }
+        return Movie;
     }
 
 }
