@@ -8,11 +8,13 @@ public class movie {
     private int releaseYear;
     private int duration;
     private int ageLimit;
-    private ArrayList<String> genres = new ArrayList<String>();
+    //private ArrayList<String> genres = new ArrayList<String>();
+    private String genres;
     private int ID;
     private String picText;
+    private String picURL;
 
-    public movie(String name, String time, int releaseYear, int duration, int ageLimit, ArrayList<String> genres, int ID, String picText) {
+    public movie(String name, String time, int releaseYear, int duration, int ageLimit,String genres, int ID, String picText, String picURL) {
         this.name = name;
         this.time = time;
         this.releaseYear = releaseYear;
@@ -21,6 +23,7 @@ public class movie {
         this.genres = genres;
         this.ID = ID;
         this.picText = picText;
+        this.picURL = picURL;
     }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -40,10 +43,13 @@ public class movie {
     public int getID() { return ID; }
     public void setID(int ID) { this.ID = ID; }
 
-    public ArrayList<String> getGenres() { return genres; }
-    public void setGenres(ArrayList<String> genres) { this.genres = genres; }
+    //public ArrayList<String> getGenres() { return genres; }
+    //public void setGenres(ArrayList<String> genres) { this.genres = genres; }
 
     public String getPicText() { return picText; }
     public void setPicText(String picText) { this.picText = picText; }
+
+    public String getPicURL() {return picURL;}
+    public void setPicURL(String picText) { this.picURL = picURL; }
 
 }

@@ -45,7 +45,7 @@
             android:layout_marginRight="150dp"
             tools:layout_editor_absoluteX="141dp"
             tools:layout_editor_absoluteY="465dp"
-            tools:srcCompat="@drawable/NoTimeToDie_1080final"
+            tools:srcCompat="@drawable/test_image"
             app:layout_constraintTop_toTopOf="@id/imagebackground"
             app:layout_constraintLeft_toLeftOf="@id/imagebackground"
             app:layout_constraintRight_toRightOf="@id/imagebackground"

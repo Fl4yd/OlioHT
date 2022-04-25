@@ -9,8 +9,8 @@ public class theater {
 
     }
 
-    public void addMovie(String name, String time, int releaseYear, int duration, int ageLimit, ArrayList<String> genres, int ID, String picText) {
+    public void addMovie(String name, String time, int releaseYear, int duration, int ageLimit, String genres, int ID, String picText, String picURL) {
 
-        movies.add(new movie(name, time, releaseYear, duration, ageLimit, genres, ID, picText));
+        movies.add(new movie(name, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL));
     }
 }

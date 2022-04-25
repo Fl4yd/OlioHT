@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void LoginPage() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, ViewActivity.class);
         startActivity(intent);
     }
     public void ProfilePage() {

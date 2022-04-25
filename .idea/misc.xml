@@ -11,9 +11,13 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.128" />
         <entry key="app/src/main/res/drawable/login_btn.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/vie_bg.xml" value="0.202" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.1171875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.12962962962962962" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17028985507246377" />
+        <entry key="app/src/main/res/layout/activity_movie.xml" value="0.1171875" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_reviews.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_view.xml" value="0.253125" />
       </map>
     </option>
   </component>

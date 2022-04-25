@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name">OlioHT</string>
     <string name="user_name">name</string>
-    <string name= "user_age">00</string>
-    <string name ="user_theatre">theatre</string>
+    <string name="user_age">00</string>
+    <string name="user_theatre">theatre</string>
     <string name="user_name_label">Name:</string>
-    <string name= "user_age_label">Age:</string>
-    <string name ="user_theatre_label">Hometheatre:</string>
-    <string name ="movie_name">Moviename</string>
-    <string name ="age_limit">Agelimit</string>
-    <string name ="production_year">Productionyear</string>
-    <string name ="duration">Duration</string>
-    <string name ="actors">Actors</string>
-    <string name ="producer">Producer</string>
+    <string name="user_age_label">Age:</string>
+    <string name="user_theatre_label">Hometheatre:</string>
+    <string name="movie_name">Moviename</string>
+    <string name="age_limit">Agelimit</string>
+    <string name="production_year">Productionyear</string>
+    <string name="duration">Duration</string>
+    <string name="actors">Actors</string>
+    <string name="producer">Producer</string>
     <string-array name="Theatres_spinner">
         <item name="theatre1">Tennispalatsi</item>
         <item name="theatre2">Kinopalatsi</item>
