@@ -26,6 +26,7 @@ import javax.xml.parsers.ParserConfigurationException;
 public class MainActivity extends AppCompatActivity {
     private Button button;
     private Button pbutton;
+    private Button hbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
         button = findViewById(R.id.kirjautumisSivu);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,11 +45,20 @@ public class MainActivity extends AppCompatActivity {
                 LoginPage();
             }
         });
+
         pbutton = findViewById(R.id.profilebutton);
         pbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View p) {
                 ProfilePage();
+            }
+        });
+
+        hbutton = findViewById(R.id.historybutton);
+        hbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View h) {
+                HistoryPage();
             }
         });
 
@@ -58,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ProfilePage() {
         Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void HistoryPage() {
+        Intent intent = new Intent(this, HistoryActivity.class);
         startActivity(intent);
     }
     public void readXML (View v) {
