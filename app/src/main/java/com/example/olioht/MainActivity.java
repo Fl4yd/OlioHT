@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button pbutton;
     private Button hbutton;
     String moi;
+    String moi2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
