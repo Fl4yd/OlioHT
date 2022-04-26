@@ -58,20 +58,27 @@ public class ViewActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int id = movies.get(i).getID();
-                Intent intent = new Intent(getApplicationContext(), MovieActivity.class);
-                intent.putExtra("id", id);
-                startActivity(intent);
+                MovieView(id);
             }
         });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
-                startActivity(intent);
+                ProfileView();
             }
         });
 
     }
+    public void ProfileView() {
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void MovieView(int id) {
+        Intent intent = new Intent(getApplicationContext(), MovieActivity.class);
+        intent.putExtra("id", id);
+        startActivity(intent);
+    }
+
     public void readXML () {
         int counter1 = 0;
         int counter2 = 0;
