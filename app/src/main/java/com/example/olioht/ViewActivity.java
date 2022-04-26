@@ -8,6 +8,7 @@ import android.os.StrictMode;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import javax.xml.parsers.ParserConfigurationException;
 public class ViewActivity extends AppCompatActivity {
     ArrayList<movie> movies = new ArrayList<movie>();
     GridView gridView;
-
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class ViewActivity extends AppCompatActivity {
             images[i] = movies.get(i).getPicURL();
         }
         setContentView(R.layout.activity_view);
-
+        button = findViewById(R.id.profileButton);
         gridView = findViewById(R.id.gridView);
         GridAdapter gridAdapter = new GridAdapter(ViewActivity.this, names, images);
         gridView.setAdapter(gridAdapter);
@@ -59,6 +60,13 @@ public class ViewActivity extends AppCompatActivity {
                 int id = movies.get(i).getID();
                 Intent intent = new Intent(getApplicationContext(), MovieActivity.class);
                 intent.putExtra("id", id);
+                startActivity(intent);
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
             }
         });
