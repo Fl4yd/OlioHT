@@ -7,26 +7,27 @@
     android:background="@drawable/gradient_background">
 
 
-
-
     <TextView
         android:id="@+id/movie_name"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textAlignment="center"
         android:autoSizeMaxTextSize="25dp"
         android:autoSizeTextType="uniform"
-        app:layout_constraintVertical_bias="0.3"
-        android:textAlignment="center"
-        app:layout_constraintHorizontal_bias="0.2"
         android:maxLines="3"
         android:text="Movie name"
         android:textColor="@color/yellow_200"
-        android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ageLimit"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.075"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imageView5"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
 
     <TextView
         android:id="@+id/movieAgeLimit"

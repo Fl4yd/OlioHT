@@ -42,11 +42,7 @@ public class MovieActivity extends AppCompatActivity {
             duration.setText(String.valueOf(Movie.getDuration()));
             actors.setText(Movie.getActors());
             directors.setText(Movie.getDirectors());
-            String[] split = Movie.getActors().replaceAll(" ", "").replaceAll("\n\n", " ").split("\n");
-            String[] pairs = new String[split.length/2];
-            for(int i = 0; i < split.length; i = i + 2) {
-                pairs[i/2] = split[i] + " " + split[i+1];
-            }
+            String[] pairs = parseString(Movie.getActors());
 
             for(int i = 0; i < pairs.length; i++) {
                 System.out.println(pairs[i]);
@@ -54,4 +50,21 @@ public class MovieActivity extends AppCompatActivity {
         }
 
     }
+
+    public String[] parseString(String string) {
+        String[] split = string.replaceAll(" ", "").replaceAll("\n\n", " ").split("\n");
+        String[] pairs = new String[split.length/2];
+        for(int i = 0; i < split.length; i = i + 2) {
+            pairs[i/2] = split[i] + " " + split[i+1];
+        }
+
+        for(int i = 0; i < pairs.length; i++) {
+            System.out.println(pairs[i]);
+        }
+        return pairs;
+    }
+
+
+
 }
+
