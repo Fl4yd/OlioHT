@@ -85,13 +85,10 @@ public class ViewActivity extends AppCompatActivity {
             System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getDocumentElement().getElementsByTagName("Event");
-            System.out.println(nList.getLength());
 
             for (int i = 0; i < nList.getLength(); i++) {
                 Node node = nList.item(i);
-                counter1++;
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    counter2++;
                     Element element = (Element) node;
 
                     title = element.getElementsByTagName("Title").item(0).getTextContent();
@@ -129,8 +126,7 @@ public class ViewActivity extends AppCompatActivity {
             e.printStackTrace();
         }finally {
             System.out.println("The information has been stored.");
-            System.out.println(counter1);
-            System.out.println(counter2);
+
         }
     }
 }
