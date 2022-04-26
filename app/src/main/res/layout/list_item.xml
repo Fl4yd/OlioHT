@@ -8,7 +8,8 @@
         android:id="@+id/imagebackground"
         android:layout_width="344dp"
         android:layout_height="276dp"
-        app:srcCompat="@drawable/profile_taustanelio_bg" />
+        app:srcCompat="@drawable/profile_taustanelio_bg"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/list_image"

@@ -2,6 +2,7 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
@@ -10,9 +11,6 @@
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient_background"
@@ -166,7 +164,7 @@
             app:layout_constraintVertical_bias="0.2" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logo"
             android:layout_width="403dp"
             android:layout_height="312dp"
             android:layout_marginTop="80dp"
@@ -192,6 +190,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.062" />
+
+        <Button
+            android:id="@+id/movie_history_btn"
+            android:layout_width="224dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/yellow_200"
+            android:text="Movie History"
+            app:layout_constraintBottom_toTopOf="@id/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
