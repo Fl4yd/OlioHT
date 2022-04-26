@@ -3,109 +3,104 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/gradient_background" />
+
 
 
     <TextView
         android:id="@+id/movie_name"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="48dp"
         android:autoSizeMaxTextSize="25dp"
         android:autoSizeTextType="uniform"
-
-        android:gravity="center"
+        app:layout_constraintVertical_bias="0.3"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.2"
         android:maxLines="3"
         android:text="Movie name"
         android:textColor="@color/yellow_200"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ageLimit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintStart_toEndOf="@id/imageView5"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="54dp"
-        android:layout_height="23dp"
+        android:id="@+id/movieAgeLimit"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="20dp"
+        app:flow_horizontalBias="0."
         android:text="AgeLimit:"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@+id/movieYear"
+        app:layout_constraintEnd_toStartOf="@id/ageLimit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.223" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="54dp"
-        android:layout_height="23dp"
-        android:text="yearActors:"
-        android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="54dp"
-        android:layout_height="23dp"
+        android:id="@+id/movieDuration"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="20dp"
         android:text="Duration:"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintBottom_toTopOf="@id/movieActor"
+        app:layout_constraintEnd_toStartOf="@id/duration"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        app:layout_constraintTop_toBottomOf="@id/movieYear"
+        app:layout_constraintVertical_bias="0.166" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="67dp"
+        android:id="@+id/movieYear"
+        android:layout_width="70dp"
         android:layout_height="22dp"
+        android:text="yearActors:"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/yellow_200"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@id/movieDuration"
+        app:layout_constraintEnd_toStartOf="@id/productionYear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieAgeLimit"
+        app:layout_constraintVertical_bias="0.132" />
+
+
+    <TextView
+        android:id="@+id/movieProducer"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="60dp"
+        android:text="Producers:"
+        android:textColor="@color/yellow_200"
+        app:layout_constraintEnd_toStartOf="@+id/actors"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieActor" />
+
+    <TextView
+        android:id="@+id/movieActor"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="20dp"
         android:text="Actors:"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintBottom_toTopOf="@id/movieProducer"
+        app:layout_constraintEnd_toStartOf="@id/actors"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieDuration"
         app:layout_constraintVertical_bias="0.443" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="54dp"
-        android:layout_height="23dp"
-        android:text="Producers:"
-        android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
-
-
-    <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/movieReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reviews"
@@ -121,77 +116,82 @@
     <TextView
         android:id="@+id/ageLimit"
         android:layout_width="107dp"
-        android:layout_height="23dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="36dp"
         android:text="@string/age_limit"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/productionYear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movie_name"
+        app:layout_constraintVertical_bias="0.657" />
 
     <TextView
         android:id="@+id/productionYear"
         android:layout_width="107dp"
-        android:layout_height="23dp"
+        android:layout_height="22dp"
         android:text="@string/production_year"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.488"
+        android:layout_marginBottom="20dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/duration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
+        app:layout_constraintTop_toBottomOf="@id/ageLimit"
+        app:layout_constraintVertical_bias="0.458" />
 
     <TextView
         android:id="@+id/duration"
         android:layout_width="107dp"
-        android:layout_height="23dp"
+        android:layout_height="22dp"
         android:text="@string/duration"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.488"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/actors"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintTop_toBottomOf="@id/productionYear"
+        app:layout_constraintVertical_bias="0.225" />
 
     <TextView
         android:id="@+id/actors"
-        android:layout_width="367dp"
-        android:layout_height="590dp"
+        android:layout_width="209dp"
+        android:layout_height="71dp"
         android:text="@string/actors"
+        android:layout_marginBottom="20dp"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/producers"
+        app:layout_constraintHorizontal_bias="0.732"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.624" />
+        app:layout_constraintTop_toBottomOf="@+id/duration" />
 
     <TextView
         android:id="@+id/producers"
-        android:layout_width="226dp"
-        android:layout_height="366dp"
+        android:layout_width="186dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
         android:text="@string/producer"
         android:textColor="@color/yellow_200"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.668"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.657"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.931" />
+        app:layout_constraintTop_toBottomOf="@id/actors" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="58dp"
         android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintBottom_toTopOf="@+id/movieAgeLimit"
+        app:layout_constraintEnd_toStartOf="@id/movie_name"
+        android:layout_marginTop="30dp"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.013"
+
         app:srcCompat="@drawable/finnkino_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
