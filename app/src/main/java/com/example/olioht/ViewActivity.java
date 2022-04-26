@@ -30,8 +30,6 @@ public class ViewActivity extends AppCompatActivity {
     ArrayList<movie> movies = new ArrayList<movie>();
     GridView gridView;
 
-    //String [] names = {"Kissa1", "Kissa2", "Kissa3", "Kissa4", "Kissa5", "Kissa6"};
-    //String[] images = {"https://media.finnkino.fi/1012/Event_13317/portrait_medium/FantasticBeasts3_1080b.jpg","https://media.finnkino.fi/1012/Event_13317/portrait_medium/FantasticBeasts3_1080b.jpg","https://media.finnkino.fi/1012/Event_13317/portrait_medium/FantasticBeasts3_1080b.jpg","https://media.finnkino.fi/1012/Event_13317/portrait_medium/FantasticBeasts3_1080b.jpg","https://media.finnkino.fi/1012/Event_13317/portrait_medium/FantasticBeasts3_1080b.jpg","https://media.finnkino.fi/1012/Event_13317/portrait_medium/FantasticBeasts3_1080b.jpg"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,35 +76,33 @@ public class ViewActivity extends AppCompatActivity {
             String picURL;
             storeData[] storeData_array;
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            String urlString = "https://www.finnkino.fi/xml/Schedule/";
+            String urlString = "https://www.finnkino.fi/xml/Events/";
             Document doc = builder.parse(urlString);
             doc.getDocumentElement().normalize();
             System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
 
-            NodeList nList = doc.getDocumentElement().getElementsByTagName("Show");
+            NodeList nList = doc.getDocumentElement().getElementsByTagName("Event");
 
-            storeData_array = new storeData[nList.getLength()];
             int identifier = 0;
             for (int i = 0; i < nList.getLength(); i++) {
-                storeData_array[i] = new storeData();
                 Node node = nList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
 
                     title = element.getElementsByTagName("Title").item(0).getTextContent();
-                    time = element.getElementsByTagName("dtAccounting").item(0).getTextContent();
+                    time = element.getElementsByTagName("dtLocalRelease").item(0).getTextContent();
                     releaseYear = Integer.parseInt(element.getElementsByTagName("ProductionYear").item(0).getTextContent());
                     duration = Integer.parseInt(element.getElementsByTagName("LengthInMinutes").item(0).getTextContent());
                     String temp;
-                    if((temp = element.getElementsByTagName("Rating").item(0).getTextContent()) == "S") {
+                    if((temp = element.getElementsByTagName("Rating").item(0).getTextContent()) == "S" || temp == "(none)"  ) {
                         ageLimit = 0;
                     }else {
                         ageLimit = 0;
                         //ageLimit = Integer.parseInt(temp);
                     }
                     genres = element.getElementsByTagName("Genres").item(0).getTextContent();
-                    ID = Integer.parseInt(element.getElementsByTagName("EventID").item(0).getTextContent());
-                    picText = element.getElementsByTagName("ShowURL").item(0).getTextContent();
+                    ID = Integer.parseInt(element.getElementsByTagName("ID").item(0).getTextContent());
+                    picText = element.getElementsByTagName("Synopsis").item(0).getTextContent();
                     picURL = element.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
                     movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL));
                     Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL));
