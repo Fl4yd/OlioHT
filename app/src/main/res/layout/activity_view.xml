@@ -34,9 +34,6 @@
         />
 
 
-    <Button
-        android:layout_width="10dp"
-        android:layout_height="10dp"/>
     <ImageView
         android:id="@+id/searchBox"
         android:layout_width="0dp"
