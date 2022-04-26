@@ -18,6 +18,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -64,6 +65,8 @@ public class ViewActivity extends AppCompatActivity {
 
     }
     public void readXML () {
+        int counter1 = 0;
+        int counter2 = 0;
         try {
             String title;
             String time;
@@ -82,11 +85,13 @@ public class ViewActivity extends AppCompatActivity {
             System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getDocumentElement().getElementsByTagName("Event");
+            System.out.println(nList.getLength());
 
-            int identifier = 0;
             for (int i = 0; i < nList.getLength(); i++) {
                 Node node = nList.item(i);
+                counter1++;
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    counter2++;
                     Element element = (Element) node;
 
                     title = element.getElementsByTagName("Title").item(0).getTextContent();
@@ -95,7 +100,7 @@ public class ViewActivity extends AppCompatActivity {
                     duration = Integer.parseInt(element.getElementsByTagName("LengthInMinutes").item(0).getTextContent());
                     String temp;
                     if((temp = element.getElementsByTagName("Rating").item(0).getTextContent()) == "S" || temp == "(none)"  ) {
-                        ageLimit = 0;
+                        ageLimit = 10;
                     }else {
                         ageLimit = 0;
                         //ageLimit = Integer.parseInt(temp);
@@ -103,7 +108,12 @@ public class ViewActivity extends AppCompatActivity {
                     genres = element.getElementsByTagName("Genres").item(0).getTextContent();
                     ID = Integer.parseInt(element.getElementsByTagName("ID").item(0).getTextContent());
                     picText = element.getElementsByTagName("Synopsis").item(0).getTextContent();
-                    picURL = element.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
+                    if (element.getElementsByTagName("EventMediumImagePortrait").item(0) != null) {
+                        picURL = element.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
+                    }else {
+                        picURL = null;
+                    }
+
                     movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL));
                     Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL));
                 }
@@ -119,6 +129,8 @@ public class ViewActivity extends AppCompatActivity {
             e.printStackTrace();
         }finally {
             System.out.println("The information has been stored.");
+            System.out.println(counter1);
+            System.out.println(counter2);
         }
     }
 }

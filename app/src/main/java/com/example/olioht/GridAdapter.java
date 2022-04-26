@@ -52,8 +52,11 @@ public class GridAdapter extends BaseAdapter {
 
         ImageView imageView = view.findViewById(R.id.grid_image);
         TextView textView = view.findViewById(R.id.item_name);
-
-        Picasso.get().load(image[i]).into(imageView);
+        if (image[i] == null) {
+            imageView.setImageResource(R.drawable.no_picture);
+        }else {
+            Picasso.get().load(image[i]).into(imageView);
+        }
         textView.setText(name[i]);
 
         return view;
