@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 
-                if (user.equals("") || pass.equals("")) {
+                /*if (user.equals("") || pass.equals("")) {
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }else {
                     Boolean checkCredentials = DB.checkCredentials(user, pass);
@@ -43,8 +43,8 @@ public class LoginActivity extends AppCompatActivity {
                     }else {
                         Toast.makeText(LoginActivity.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                     }
-                }
-
+                }*/
+                Login();
 
 
 
