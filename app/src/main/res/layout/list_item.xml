@@ -6,8 +6,9 @@
     xmlns:tools="http://schemas.android.com/tools">
     <ImageView
         android:id="@+id/imagebackground"
-        android:layout_width="344dp"
-        android:layout_height="276dp"
+        android:layout_width="wrap_content"
+        app:flow_horizontalBias="0.5"
+        android:layout_height="wrap_content"
         app:srcCompat="@drawable/profile_taustanelio_bg"
         tools:ignore="MissingConstraints" />
 

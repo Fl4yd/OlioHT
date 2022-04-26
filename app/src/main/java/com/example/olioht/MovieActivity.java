@@ -13,7 +13,7 @@ public class MovieActivity extends AppCompatActivity {
     TextView productionYear;
     TextView duration;
     TextView actors;
-    TextView producers;
+    TextView directors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MovieActivity extends AppCompatActivity {
         productionYear = findViewById(R.id.productionYear);
         duration = findViewById(R.id.duration);
         actors = findViewById(R.id.actors);
-        producers = findViewById(R.id.producers);
+        directors = findViewById(R.id.producers);
 
         if(intent != null) {
             int ID = intent.getIntExtra("id", 0);
@@ -40,6 +40,8 @@ public class MovieActivity extends AppCompatActivity {
             ageLimit.setText(String.valueOf(Movie.getAgeLimit()));
             productionYear.setText(String.valueOf(Movie.getReleaseYear()));
             duration.setText(String.valueOf(Movie.getDuration()));
+            actors.setText(Movie.getActors());
+            directors.setText(Movie.getDirectors());
         }
 
     }
