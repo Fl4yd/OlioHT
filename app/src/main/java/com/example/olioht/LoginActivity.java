@@ -22,8 +22,8 @@ public class LoginActivity extends AppCompatActivity {
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
 
-
         Button loginbtn = (Button) findViewById(R.id.login);
+        Button createAccountBtn = (Button) findViewById(R.id.createAccount);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,11 +35,21 @@ public class LoginActivity extends AppCompatActivity {
                 //}
             }
         });
+        createAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CreateAccount();
+            }
+        });
     }
 
 
     public void Login() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void CreateAccount() {
+        Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
 }
