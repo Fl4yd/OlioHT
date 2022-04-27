@@ -20,7 +20,7 @@
             android:id="@+id/imageView5"
             android:layout_width="313dp"
             android:layout_height="218dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toTopOf="@+id/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.071"
             app:layout_constraintStart_toStartOf="parent"
