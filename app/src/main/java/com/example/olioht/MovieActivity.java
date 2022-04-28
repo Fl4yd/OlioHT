@@ -19,6 +19,7 @@ public class MovieActivity extends AppCompatActivity {
     TextView actors;
     TextView directors;
     String actorsString = "";
+    TextView synopsis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class MovieActivity extends AppCompatActivity {
         duration = findViewById(R.id.duration);
         actors = findViewById(R.id.actors);
         directors = findViewById(R.id.producers);
+        synopsis = findViewById(R.id.setSynopsis);
 
         if (intent != null) {
             int ID = intent.getIntExtra("id", 0);
@@ -45,6 +47,7 @@ public class MovieActivity extends AppCompatActivity {
             productionYear.setText(String.valueOf(Movie.getReleaseYear()));
             duration.setText(getTimeString(Movie.getDuration()));
             directors.setText(Movie.getDirectors());
+            synopsis.setText(Movie.getSynopsis());
             Picasso.get().load(Movie.getAgeLimit()).into(ageLimit);
             Picasso.get().load(Movie.getPicURL()).into(moviePicture);
             parseString(Movie.getActors());

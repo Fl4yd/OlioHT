@@ -62,6 +62,6 @@ public class movie {
     public String getDirectors() {return directors;}
     public void setDirectors(String directors) { this.directors = directors; }
 
-    public String getSynopsis() {return directors;}
+    public String getSynopsis() {return this.synopsis;}
     public void setSynopsis(String synopsis) { this.synopsis = synopsis; }
 }
