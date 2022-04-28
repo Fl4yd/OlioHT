@@ -87,13 +87,14 @@ public class ViewActivity extends AppCompatActivity {
             String time;
             int releaseYear;
             int duration;
-            int ageLimit;
+            String ageLimit;
             String genres;
             int ID;
             String picText;
             String picURL;
             String actors;
             String directors;
+            String synopsis;
             storeData[] storeData_array;
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             String urlString = "https://www.finnkino.fi/xml/Events/";
@@ -112,12 +113,11 @@ public class ViewActivity extends AppCompatActivity {
                     time = element.getElementsByTagName("dtLocalRelease").item(0).getTextContent();
                     releaseYear = Integer.parseInt(element.getElementsByTagName("ProductionYear").item(0).getTextContent());
                     duration = Integer.parseInt(element.getElementsByTagName("LengthInMinutes").item(0).getTextContent());
-                    String temp;
-                    if((temp = element.getElementsByTagName("Rating").item(0).getTextContent()) == "S" || temp == "(none)"  ) {
-                        ageLimit = 10;
-                    }else {
-                        ageLimit = 0;
-                        //ageLimit = Integer.parseInt(temp);
+                    ageLimit = element.getElementsByTagName("Rating").item(0).getTextContent();
+                    if (ageLimit != "(none)") {
+                        ageLimit = element.getElementsByTagName("RatingImageUrl").item(0).getTextContent();
+                    } else {
+                        ageLimit = "https://media.finnkino.fi/images/rating_large_S.png";
                     }
                     genres = element.getElementsByTagName("Genres").item(0).getTextContent();
                     ID = Integer.parseInt(element.getElementsByTagName("ID").item(0).getTextContent());
@@ -129,8 +129,9 @@ public class ViewActivity extends AppCompatActivity {
                     }
                     actors = element.getElementsByTagName("Cast").item(0).getTextContent();
                     directors = element.getElementsByTagName("Directors").item(0).getTextContent();
-                    movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors));
-                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors));
+                    synopsis = element.getElementsByTagName("Synopsis").item(0).getTextContent();
+                    movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
+                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
                 }
             }
 
