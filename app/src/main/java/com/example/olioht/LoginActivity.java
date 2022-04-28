@@ -49,17 +49,19 @@ public class LoginActivity extends AppCompatActivity {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 
-                /*if (user.equals("") || pass.equals("")) {
+                if (user.equals("") || pass.equals("")) {
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }else {
                     Boolean checkCredentials = DB.checkCredentials(user, pass);
                     if (checkCredentials == true) {
                         Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        UserinfoBase.get().selectUser(user);
                         Login();
+
                     }else {
                         Toast.makeText(LoginActivity.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                     }
-                }*/
+                }
                 Login();
 
 

@@ -122,25 +122,27 @@
         app:layout_constraintTop_toTopOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.55"
         app:layout_constraintWidth_percent="0.6" />
-    <EditText
-        android:id="@+id/setTheatre"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Theatre"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:inputType="textPassword"
-        android:paddingBottom="10dp"
-        android:drawableLeft="@drawable/ic_baseline_theaters"
-        android:drawablePadding="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.75"
-        app:layout_constraintWidth_percent="0.6" />
+
+        <Spinner
+            android:id="@+id/profileSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:paddingTop="10dp"
+            android:textSize="20dp"
+            android:tooltipText="Select Theatre"
+            android:popupBackground="@color/yellow_200"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.75"
+            app:layout_constraintWidth_percent="0.6"
+
+            />
 
     <TextView
         android:layout_width="wrap_content"

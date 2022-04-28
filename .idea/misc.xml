@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/drawable/dropdownmenubackground.xml" value="0.1685" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/drawable/gradient_background.xml" value="0.2525" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_history.xml" value="0.22" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_listview.xml" value="0.1" />

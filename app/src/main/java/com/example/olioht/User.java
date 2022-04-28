@@ -3,16 +3,17 @@ package com.example.olioht;
 public class User {
     private String mUser;
     private String mTheatre;
+    private String mName;
+    private int mAge;
 
-    public User(String mUser, String mTheatre, String mName, String mAge) {
+    public User(String mUser, String mTheatre, String mName, int mAge) {
         this.mUser = mUser;
         this.mTheatre = mTheatre;
         this.mName = mName;
         this.mAge = mAge;
     }
 
-    private String mName;
-    private String mAge;
+
 
     public String getmUser() {
         return mUser;
@@ -38,11 +39,11 @@ public class User {
         this.mName = mName;
     }
 
-    public String getmAge() {
+    public int getmAge() {
         return mAge;
     }
 
-    public void setmAge(String mAge) {
+    public void setmAge(int mAge) {
         this.mAge = mAge;
     }
 

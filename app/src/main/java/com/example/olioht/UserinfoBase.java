@@ -1,37 +1,42 @@
 package com.example.olioht;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 // Singleton profiilitietoja varten
 
-public class UserinfoBase {
-    private List<User> mUsers;
+public class UserinfoBase implements Serializable {
+    private HashMap<String, User> mUsers;
+    private User currentUser;
     private UserinfoBase() {
-        mUsers = new ArrayList<>();
+        mUsers = new HashMap<String, User>();
     }
-    public void addUser(String username, String age, String name, String theatre) {
-        mUsers.add(new User(username, theatre, name, age));
-    }
-    public User getUserData(String username){
-        for (User element : mUsers) {
-            if (element.getmUser().equals(username)) {
-                return(element);
-
-            }
-        }
-        return null;
-    }
-
-    public List<User> getUsers(){
-        return(mUsers);
-    }
-    private static UserinfoBase mUsersBase;
     public static UserinfoBase get() {
         if (mUsersBase == null) {
             mUsersBase = new UserinfoBase();
         }
         return(mUsersBase);
     }
+
+
+    public void addUser(String username, int age, String name, String theatre) {
+        mUsers.put(username,new User(username, theatre, name, age));
+    }
+    public void selectUser(String username) {
+        this.currentUser = mUsers.get(username);
+    }
+    public User getCurrentUser () {
+        return this.currentUser;
+    }
+
+    public User getUserData(String username){
+        return mUsers.get(username);
+    }
+
+
+    private static UserinfoBase mUsersBase;
+
 }
 
