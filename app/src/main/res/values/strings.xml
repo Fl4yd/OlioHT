@@ -8,7 +8,7 @@
     <string name="user_theatre_label">Hometheatre:</string>
     <string name="movie_name">Moviename</string>
     <string name="age_limit">Agelimit</string>
-    <string name="production_year">Productionyear</string>
+    <string name="production_year">Productionyear:</string>
     <string name="duration">Duration</string>
     <string name="actors">Actors</string>
     <string name="producer">Producer</string>
