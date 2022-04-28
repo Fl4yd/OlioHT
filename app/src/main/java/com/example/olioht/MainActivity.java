@@ -100,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
                     Element element = (Element) node;
 
                     ID = element.getElementsByTagName("ID").item(0).getTextContent();
-                    storeData_array[i].setID(ID);
-                    System.out.println("Theatre ID: "+storeData_array[i].getID());
+                    //storeData_array[i].setID(ID);
+                    //System.out.println("Theatre ID: "+storeData_array[i].getID());
                     name = element.getElementsByTagName("Name").item(0).getTextContent();
                     storeData_array[i].setName(name);
                     System.out.println("Theatre name: "+storeData_array[i].getName());
-                    storeData_array[i].storeData(ID, name);
+                    //storeData_array[i].storeData(ID, name);
 
                 }
             }
