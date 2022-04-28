@@ -16,6 +16,9 @@
             android:name=".SetupProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".ReviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".HistoryActivity"
             android:exported="false" />
         <activity
