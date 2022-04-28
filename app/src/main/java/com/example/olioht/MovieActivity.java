@@ -3,7 +3,6 @@ package com.example.olioht;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -41,12 +40,11 @@ public class MovieActivity extends AppCompatActivity {
 
             movie Movie = Movies.getInstance().searchMovie(ID);
             movieName.setText(Movie.getName());
-
             productionYear.setText(String.valueOf(Movie.getReleaseYear()));
             duration.setText(String.valueOf(Movie.getDuration()));
             actors.setText(Movie.getActors());
             directors.setText(Movie.getDirectors());
-            Picasso.get().load("https://media.finnkino.fi/images/rating_large_16.png").into(ageLimit);
+            Picasso.get().load(Movie.getAgeLimit()).into(ageLimit);
             String[] pairs = parseString(Movie.getActors());
 
             for(int i = 0; i < pairs.length; i++) {
