@@ -61,7 +61,7 @@ public class MovieActivity extends AppCompatActivity {
         String[] pairs = new String[split.length / 2];
         if (split.length == 1) {
             this.actorsString = "Actors not available";
-            return ;
+            return          ;
 
         }else {
             for (int i = 0; i < split.length; i = i + 2) {

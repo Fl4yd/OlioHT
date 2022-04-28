@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class SetupProfileActivity extends AppCompatActivity {
     TextView details;
     String name;
     Button registerButton;
+    Spinner theatre;
     int age;
     DatabaseHelper DB;
     @Override
@@ -37,12 +39,11 @@ public class SetupProfileActivity extends AppCompatActivity {
         name = nameTextView.getText().toString();
         System.out.println("Moi");
         System.out.println("My name is " + name);
-        age =  1;//Integer.parseInt(ageTextView.getText().toString());
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 name = nameTextView.getText().toString();
-                System.out.println(name);
+                age =  Integer.parseInt(ageTextView.getText().toString());
                 if (name.isEmpty()) {
                     details.setText("Please enter all the fields");
                 }else if (age > 100 || age < 1) {
