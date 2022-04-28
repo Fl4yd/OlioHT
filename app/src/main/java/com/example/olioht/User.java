@@ -3,6 +3,14 @@ package com.example.olioht;
 public class User {
     private String mUser;
     private String mTheatre;
+
+    public User(String mUser, String mTheatre, String mName, String mAge) {
+        this.mUser = mUser;
+        this.mTheatre = mTheatre;
+        this.mName = mName;
+        this.mAge = mAge;
+    }
+
     private String mName;
     private String mAge;
 

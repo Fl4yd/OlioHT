@@ -11,11 +11,7 @@ public class UserinfoBase {
         mUsers = new ArrayList<>();
     }
     public void addUser(String username, String age, String name, String theatre) {
-        User user = new User();
-        user.setmUser(username);
-        user.setmAge(age);
-        user.setmName(name);
-        user.setmTheatre(theatre);
+        User user = new User(username, theatre, name, age);
         mUsers.add(user);
     }
     public User getUserData(String username){
