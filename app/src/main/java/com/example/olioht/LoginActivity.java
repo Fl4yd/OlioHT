@@ -4,11 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -17,9 +30,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
+        readXML();
         DB = new DatabaseHelper(this);
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
@@ -65,4 +81,49 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
+    public void readXML () {
+        try {
+            String ID;
+            String name;
+            storeData[] storeData_array;
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            String urlString = "https://www.finnkino.fi/xml/TheatreAreas/";
+            Document doc = builder.parse(urlString);
+            doc.getDocumentElement().normalize();
+           // System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
+
+            NodeList nList = doc.getDocumentElement().getElementsByTagName("TheatreArea");
+
+            storeData_array = new storeData[nList.getLength()];
+
+            for (int i = 0; i < nList.getLength(); i++) {
+                storeData_array[i] = new storeData();
+                Node node = nList.item(i);
+                // System.out.println("Element is this: " + node.getNodeName());
+
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element element = (Element) node;
+
+                    ID = element.getElementsByTagName("ID").item(0).getTextContent();
+                    storeData_array[i].setID(ID);
+                    //System.out.println("Theatre ID: "+storeData_array[i].getID());
+                    name = element.getElementsByTagName("Name").item(0).getTextContent();
+                    TheaterSingleton.get().AddTheaterString(name,ID);
+                    //System.out.println("Theatre name: "+storeData_array[i].getName());
+                    storeData_array[i].storeData(name);
+
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("The information has been stored.");
+        }
+    }
 }
+

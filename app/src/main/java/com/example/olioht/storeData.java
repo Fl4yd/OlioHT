@@ -9,7 +9,7 @@ public class storeData {
         name = "";
     }
 
-    public void storeData(String ID, String name){
+    public void storeData(String name){
         this.ID = ID;
         this.name = name;
     }

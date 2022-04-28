@@ -94,6 +94,7 @@ public class ViewActivity extends AppCompatActivity {
             String picURL;
             String actors;
             String directors;
+            String synopsis;
             storeData[] storeData_array;
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             String urlString = "https://www.finnkino.fi/xml/Events/";
@@ -128,8 +129,9 @@ public class ViewActivity extends AppCompatActivity {
                     }
                     actors = element.getElementsByTagName("Cast").item(0).getTextContent();
                     directors = element.getElementsByTagName("Directors").item(0).getTextContent();
-                    movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors));
-                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors));
+                    synopsis = element.getElementsByTagName("Synopsis").item(0).getTextContent();
+                    movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
+                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
                 }
             }
 

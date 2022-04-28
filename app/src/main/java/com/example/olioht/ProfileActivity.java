@@ -10,10 +10,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
 public class ProfileActivity extends AppCompatActivity {
 
     TextView outputField;
-    Spinner theatreSpinner;
+    private Spinner theatreSpinner;
     View hbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,14 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         outputField = findViewById(R.id.textView4);
         hbutton = findViewById(R.id.movie_history_btn);
+
+        List<Theatre> Theatres = TheaterSingleton.get().getTheaters();
+
+        theatreSpinner = findViewById(R.id.theatreSpinner);
+        ArrayAdapter<Theatre> adapter = new ArrayAdapter<Theatre>(this, android.R.layout.simple_spinner_item, Theatres);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        theatreSpinner.setAdapter(adapter);
+
         hbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View h) {
@@ -32,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     }
+
 
     public void HistoryPage() {
         Intent intent = new Intent(this, HistoryActivity.class);
