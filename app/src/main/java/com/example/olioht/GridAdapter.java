@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class GridAdapter extends BaseAdapter {
+public class GridAdapter extends BaseAdapter{
 
     Context context;
     int id;

@@ -16,7 +16,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText password;
     EditText rePassword;
     TextView details;
-    Button registerBtn;
+    Button continueBtn;
     Button reLogin;
     DatabaseHelper DB;
     @Override
@@ -32,12 +32,12 @@ public class RegisterActivity extends AppCompatActivity {
         username = findViewById(R.id.setUsername);
         password = findViewById(R.id.setPassword);
         rePassword = findViewById(R.id.setRePassword);
-        details = findViewById(R.id.details);
+        details = findViewById(R.id.details1);
 
-        registerBtn = findViewById(R.id.register);
+        continueBtn = findViewById(R.id.continueRegister);
         reLogin = findViewById(R.id.reLogin);
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -51,15 +51,16 @@ public class RegisterActivity extends AppCompatActivity {
                 }else {
                     if (pass.equals(repass)) {
                         Boolean checkuser = DB.checkusername(user);
-                        details.setText("Username is taken");
+
                         if(checkuser==false) {
-                            Boolean insert = DB.addCredentials(user, pass);
-                            if(insert == true) {
-                                Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RegisterActivity.this, ViewActivity.class);
-                                intent.putExtra("username",user);
-                                startActivity(intent);
-                            }
+
+                            Intent intent = new Intent(RegisterActivity.this, SetupProfileActivity.class);
+                            intent.putExtra("username", user);
+                            intent.putExtra("password", pass);
+                            startActivity(intent);
+
+                        }else {
+                            details.setText("Username is taken");
                         }
                     }
                 }
