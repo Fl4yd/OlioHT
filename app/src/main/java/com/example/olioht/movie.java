@@ -13,8 +13,9 @@ public class movie {
     private String picURL;
     private String actors;
     private String directors;
+    private String synopsis;
 
-    public movie(String name, String time, int releaseYear, int duration, String ageLimit, String genres, int ID, String picText, String picURL, String actors, String directors) {
+    public movie(String name, String time, int releaseYear, int duration, String ageLimit, String genres, int ID, String picText, String picURL, String actors, String directors, String synopsis) {
         this.name = name;
         this.time = time;
         this.releaseYear = releaseYear;
@@ -26,6 +27,7 @@ public class movie {
         this.picURL = picURL;
         this.actors = actors;
         this.directors = directors;
+        this.synopsis = synopsis;
     }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -59,4 +61,7 @@ public class movie {
 
     public String getDirectors() {return directors;}
     public void setDirectors(String directors) { this.directors = directors; }
+
+    public String getSynopsis() {return directors;}
+    public void setSynopsis(String synopsis) { this.synopsis = synopsis; }
 }
