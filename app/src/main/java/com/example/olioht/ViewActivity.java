@@ -87,7 +87,7 @@ public class ViewActivity extends AppCompatActivity {
             String time;
             int releaseYear;
             int duration;
-            int ageLimit;
+            String ageLimit;
             String genres;
             int ID;
             String picText;
@@ -112,12 +112,11 @@ public class ViewActivity extends AppCompatActivity {
                     time = element.getElementsByTagName("dtLocalRelease").item(0).getTextContent();
                     releaseYear = Integer.parseInt(element.getElementsByTagName("ProductionYear").item(0).getTextContent());
                     duration = Integer.parseInt(element.getElementsByTagName("LengthInMinutes").item(0).getTextContent());
-                    String temp;
-                    if((temp = element.getElementsByTagName("Rating").item(0).getTextContent()) == "S" || temp == "(none)"  ) {
-                        ageLimit = 10;
-                    }else {
-                        ageLimit = 0;
-                        //ageLimit = Integer.parseInt(temp);
+                    ageLimit = element.getElementsByTagName("Rating").item(0).getTextContent();
+                    if (ageLimit != "(none)") {
+                        ageLimit = element.getElementsByTagName("RatingImageUrl").item(0).getTextContent();
+                    } else {
+                        ageLimit = "https://media.finnkino.fi/images/rating_large_S.png";
                     }
                     genres = element.getElementsByTagName("Genres").item(0).getTextContent();
                     ID = Integer.parseInt(element.getElementsByTagName("ID").item(0).getTextContent());
