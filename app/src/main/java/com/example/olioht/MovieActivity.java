@@ -89,7 +89,6 @@ public class MovieActivity extends AppCompatActivity {
                 pairs[i / 2] = split[i] + " " + split[i + 1].substring(0, split[i + 1].length());
             }
         }
-        String actors1;
         for (int i = 0; i < pairs.length; i++) {
             this.actorsString = (this.actorsString + pairs[i] + ", ");
         }

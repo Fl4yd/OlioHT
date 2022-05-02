@@ -13,7 +13,6 @@ import com.squareup.picasso.Picasso;
 public class ListAdapter extends BaseAdapter {
 
     Context context;
-    int id;
     String[] name;
     String[] image;
     int mode;
@@ -56,9 +55,6 @@ public class ListAdapter extends BaseAdapter {
 
             Picasso.get().load(image[i]).into(imageView);
             textView.setText(name[i]);
-        }else if (this.mode == 1) {
-
-
         }
         return view;
     }

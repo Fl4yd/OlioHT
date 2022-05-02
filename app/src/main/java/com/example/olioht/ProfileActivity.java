@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -39,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         List<Theatre> Theatres = TheaterSingleton.get().getTheaters();
 
 
-        ArrayAdapter<Theatre> adapter = new ArrayAdapter<Theatre>(this, android.R.layout.simple_spinner_item, Theatres);
+        ArrayAdapter<Theatre> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Theatres);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         theatreSpinner.setAdapter(adapter);
         name.setText(UserinfoBase.get().getCurrentUser().getmName());

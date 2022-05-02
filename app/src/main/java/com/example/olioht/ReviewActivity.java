@@ -7,21 +7,18 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.ArrayList;
 
 public class ReviewActivity extends AppCompatActivity {
     ImageView upload;
     TextInputLayout reviewtextfield;
     private Spinner reviewrating;
     ListView listView;
-    int i;
     int size;
 
     @Override
