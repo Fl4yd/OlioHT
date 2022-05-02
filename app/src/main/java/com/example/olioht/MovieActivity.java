@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+//Activity to show detailed information about the movie
 public class MovieActivity extends AppCompatActivity {
     TextView movieName;
     ImageView ageLimit;

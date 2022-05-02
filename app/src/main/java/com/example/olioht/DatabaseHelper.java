@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+
+//Helper class to work with the sql database
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;

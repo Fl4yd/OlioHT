@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+//Activity for the Profile setup
 public class SetupProfileActivity extends AppCompatActivity {
 
     String user;

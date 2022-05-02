@@ -3,6 +3,7 @@ package com.example.olioht;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+//Object class to store movie information and have methods to retrieve data
 public class movie implements Serializable {
     private String name;
     private String time;
