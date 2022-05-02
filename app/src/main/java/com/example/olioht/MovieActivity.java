@@ -20,6 +20,7 @@ public class MovieActivity extends AppCompatActivity {
     TextView actors;
     TextView directors;
     String actorsString = "";
+    String directorsString = "";
     TextView synopsis;
     TextView reviews;
 
@@ -80,7 +81,8 @@ public class MovieActivity extends AppCompatActivity {
 
         String[] pairs = new String[split.length / 2];
         if (split.length == 1) {
-            this.actorsString = "Actors not available";
+            this.actorsString = "Actors not available.";
+            this.directorsString = "Directors not available.";
             return          ;
 
         }else {
@@ -88,11 +90,12 @@ public class MovieActivity extends AppCompatActivity {
                 pairs[i / 2] = split[i] + " " + split[i + 1].substring(0, split[i + 1].length());
             }
         }
-        String actors1;
         for (int i = 0; i < pairs.length; i++) {
             this.actorsString = (this.actorsString + pairs[i] + ", ");
+            this.directorsString = (this.directorsString + pairs[i] + ", ");
         }
         this.actorsString = this.actorsString.substring(0, this.actorsString.length()-2);
+        this.directorsString = this.directorsString.substring(0, this.directorsString.length()-2);
     }
 
     public String getTimeString(int min) {

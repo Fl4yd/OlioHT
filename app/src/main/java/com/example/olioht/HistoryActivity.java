@@ -9,7 +9,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {
-    ArrayList<movie> movies = new ArrayList<movie>();
+    ArrayList<movie> movies = new ArrayList<>();
     ListView listView;
 
     @Override
@@ -17,21 +17,12 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        movies.add(Movies.getInstance().searchMovie(303322));
-        movies.add(Movies.getInstance().searchMovie(303583));
-        movies.add(Movies.getInstance().searchMovie(303884));
 
-        String[] names = new String[movies.size()];
-        String[] images = new String[movies.size()];
 
-        for (int i = 0; i < movies.size(); i++) {
-            names[i] = movies.get(i).getName();
-            images[i] = movies.get(i).getPicURL();
-        }
         setContentView(R.layout.activity_history);
 
         listView = findViewById(R.id.listView);
-        ListAdapter listAdapter = new ListAdapter(HistoryActivity.this, names, images, 0);
-        listView.setAdapter(listAdapter);
+        ReviewAdapter reviewAdapter = new ReviewAdapter(HistoryActivity.this, UserinfoBase.get().getCurrentUser().getReviews(), 0);
+        listView.setAdapter(reviewAdapter);
     }
 }

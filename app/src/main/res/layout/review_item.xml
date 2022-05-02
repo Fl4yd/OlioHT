@@ -16,15 +16,17 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:maxLines="3"
+        android:text="TextView"
         android:autoSizeTextType="uniform"
         android:autoSizeMaxTextSize="25dp"
-        android:textColor="@color/white"
+        android:textColor="@color/yellow_200"
         />
 
     <TextView
         android:id="@+id/user_name_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15sp"
         android:text="TextView"
         android:textColor="@color/yellow_200"
         />
@@ -35,9 +37,8 @@
         android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-
-        />
+        android:textColor="@color/yellow_200"
+        android:text="TextView" />
 
 
 </LinearLayout>
