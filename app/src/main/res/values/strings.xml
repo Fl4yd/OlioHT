@@ -12,11 +12,11 @@
     <string name="duration">Duration</string>
     <string name="actors">Actors</string>
     <string name="producer">Producer</string>
-    <string-array name="Theatres_spinner">
-        <item name="theatre1">Tennispalatsi</item>
-        <item name="theatre2">Kinopalatsi</item>
-        <item name="theatre3">Sello</item>
-        <item name="theatre4">Iso omena</item>
-        <item name="theatre5">IMAX</item>
+    <string-array name="review_scores">
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="2">3</item>
+        <item name="2">4</item>
+        <item name="2">5</item>
     </string-array>
 </resources>

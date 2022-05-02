@@ -28,6 +28,7 @@ public class UserinfoBase implements Serializable {
         this.currentUser = mUsers.get(username);
     }
     public User getCurrentUser () {
+
         return this.currentUser;
     }
 
