@@ -8,6 +8,7 @@ public class Review {
 
 
 
+
     public Review(String Username, String reviewtext, String rating, int ID) {
         this.username = Username;
         this.reviewtext = reviewtext;
@@ -33,6 +34,10 @@ public class Review {
 
     public void setReviewtext(String reviewtext) {
         this.reviewtext = reviewtext;
+    }
+
+    public int getID() {
+        return ID;
     }
 }
 /* näistä osasista koostuu ReviewSingletonin array list,
