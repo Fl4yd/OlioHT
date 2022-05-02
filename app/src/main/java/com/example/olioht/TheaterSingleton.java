@@ -1,9 +1,10 @@
 package com.example.olioht;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TheaterSingleton {
+public class TheaterSingleton implements Serializable {
     private List<Theatre> Theaters;
 
     private TheaterSingleton() {

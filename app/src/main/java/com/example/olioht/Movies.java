@@ -1,8 +1,9 @@
 package com.example.olioht;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Movies {
+public class Movies extends HashMap<String, User> implements Serializable {
 
     private static Movies Movies_instance = null;
 

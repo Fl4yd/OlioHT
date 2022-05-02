@@ -143,9 +143,6 @@ public class ViewActivity extends AppCompatActivity {
             e.printStackTrace();
         } catch (NullPointerException e) {
             e.printStackTrace();
-        }finally {
-            System.out.println("The information has been stored.");
-
         }
     }
 }

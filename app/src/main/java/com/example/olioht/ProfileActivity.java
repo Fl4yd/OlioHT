@@ -52,8 +52,10 @@ public class ProfileActivity extends AppCompatActivity {
                 if (aloitus == 1) {
                     aloitus = 0;
                 } else {
+                    UserinfoBase.get().loadData(ProfileActivity.this);
                     outputField.setText(theatreSpinner.getSelectedItem().toString());
                     UserinfoBase.get().getCurrentUser().setmTheatre(theatreSpinner.getSelectedItem().toString());
+                    UserinfoBase.get().saveData(ProfileActivity.this);
                 }
 
             }

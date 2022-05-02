@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                System.out.println("Working Directory = " + System.getProperty("user.dir"));
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 
@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkCredentials = DB.checkCredentials(user, pass);
                     if (checkCredentials == true) {
                         Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        UserinfoBase.get().loadData(LoginActivity.this);
                         UserinfoBase.get().selectUser(user);
                         Login();
 
@@ -62,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                     }
                 }
-                Login();
 
 
 

@@ -68,8 +68,10 @@ public class SetupProfileActivity extends AppCompatActivity {
                     Boolean insert = DB.addCredentials(user, pass);
 
                     if (insert == true) {
+                        UserinfoBase.get().loadData(SetupProfileActivity.this);
                         UserinfoBase.get().addUser(user, age, name, selectedTheatre);
                         UserinfoBase.get().selectUser(user);
+                        UserinfoBase.get().saveData(SetupProfileActivity.this);
                         Toast.makeText(SetupProfileActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(SetupProfileActivity.this, ViewActivity.class);
                         startActivity(intent);
