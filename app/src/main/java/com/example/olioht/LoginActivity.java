@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                     Boolean checkCredentials = DB.checkCredentials(user, pass);
                     if (checkCredentials == true) {
-                        Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         UserinfoBase.get().loadData(LoginActivity.this);
                         UserinfoBase.get().selectUser(user);
                         Login();

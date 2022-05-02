@@ -140,7 +140,7 @@ public class ViewActivity extends AppCompatActivity {
                     actors = element.getElementsByTagName("Cast").item(0).getTextContent();
                     directors = element.getElementsByTagName("Directors").item(0).getTextContent();
                     synopsis = element.getElementsByTagName("Synopsis").item(0).getTextContent();
-                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
+                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, ID, picURL, actors, directors, synopsis));
                 }
             }
 

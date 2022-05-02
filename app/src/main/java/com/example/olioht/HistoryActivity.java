@@ -9,7 +9,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {
-    ArrayList<movie> movies = new ArrayList<movie>();
+    ArrayList<movie> movies = new ArrayList<>();
     ListView listView;
 
     @Override
