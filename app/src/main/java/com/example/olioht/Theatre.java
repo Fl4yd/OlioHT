@@ -2,7 +2,8 @@ package com.example.olioht;
 
 import java.io.Serializable;
 
-public class Theatre implements Serializable {
+//Obhect class for theatre for the spinner
+public class Theatre {
     private String name;
     private String ID;
 
