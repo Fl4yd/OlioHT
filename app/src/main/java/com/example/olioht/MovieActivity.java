@@ -57,7 +57,10 @@ public class MovieActivity extends AppCompatActivity {
             Picasso.get().load(Movie.getAgeLimit()).into(ageLimit);
             Picasso.get().load(Movie.getPicURL()).into(moviePicture);
             parseString(Movie.getActors());
+            getDirectorsString(Movie.getDirectors());
             actors.setText(this.actorsString);
+            directors.setText(this.directorsString);
+
 
         }
 
@@ -83,7 +86,6 @@ public class MovieActivity extends AppCompatActivity {
         String[] pairs = new String[split.length / 2];
         if (split.length == 1) {
             this.actorsString = "Actors not available.";
-            this.directorsString = "Directors not available.";
             return          ;
 
         }else {
@@ -93,16 +95,18 @@ public class MovieActivity extends AppCompatActivity {
         }
         for (int i = 0; i < pairs.length; i++) {
             this.actorsString = (this.actorsString + pairs[i] + ", ");
-            this.directorsString = (this.directorsString + pairs[i] + ", ");
         }
         this.actorsString = this.actorsString.substring(0, this.actorsString.length()-2);
-        this.directorsString = this.directorsString.substring(0, this.directorsString.length()-2);
     }
 
     public String getTimeString(int min) {
         int hours = (int) min / 60;
         int minutes = min % 60;
         return String.valueOf(hours) + " h " + String.valueOf(minutes) + " min";
+    }
+
+    public void getDirectorsString(String string) {
+        this.directorsString = string.replaceAll(" ", "").replaceAll("\n\n", " ").replaceAll("\n", " ");
     }
 
 
