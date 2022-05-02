@@ -48,7 +48,21 @@ public class ReviewAdapter extends BaseAdapter {
         if (view == null) {
 
             if (mode == 0) {
+                int ID = arrayList.get(i).getID();
                 view = inflater.inflate(R.layout.list_item, null);
+                TextView moviename = view.findViewById(R.id.movie_name_history);
+                TextView userscore = view.findViewById(R.id.user_score_history);
+                ImageView movie_image = view.findViewById(R.id.list_image);
+                moviename.setText(Movies.getInstance().searchMovie(ID).getName());
+                userscore.setText("Your score: "+arrayList.get(i).getRating());
+
+                if (Movies.getInstance().searchMovie(ID).getPicURL() == null) {
+                    movie_image.setImageResource(R.drawable.no_picture);
+                }else {
+                    Picasso.get().load(Movies.getInstance().searchMovie(ID).getPicURL()).into(movie_image);
+                }
+
+
 
             }else if (mode == 1) {
                 view = inflater.inflate(R.layout.review_item, null);
