@@ -63,12 +63,17 @@ public class MovieActivity extends AppCompatActivity {
         reviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
-                startActivity(intent);
+                int ID = intent.getIntExtra("id", 0);
+                ReviewView(ID);
             }
         }
         );
 
+    }
+    public void ReviewView(int ID) {
+        Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
+        intent.putExtra("id", ID);
+        startActivity(intent);
     }
 
     public void parseString(String string) {

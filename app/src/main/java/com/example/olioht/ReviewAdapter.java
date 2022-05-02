@@ -52,7 +52,14 @@ public class ReviewAdapter extends BaseAdapter {
 
             }else if (mode == 1) {
                 view = inflater.inflate(R.layout.review_item, null);
-
+                TextView review = view.findViewById(R.id.review_text);
+                TextView user = view.findViewById(R.id.user_name_review);
+                TextView rating = view.findViewById(R.id.review_rating);
+                if (arrayList != null) {
+                    review.setText(arrayList.get(i).getReviewtext());
+                    user.setText(arrayList.get(i).getUsername());
+                    rating.setText(arrayList.get(i).getRating());
+                }
             }
 
         }

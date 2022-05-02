@@ -3,26 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/drawable/dropdownmenubackground.xml" value="0.1685" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/drawable/gradient_background.xml" value="0.2525" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/drawable/launcher_Background.xml" value="0.283" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/drawable/launcher_background.xml" value="0.2075" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_history.xml" value="0.22" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_listview.xml" value="0.1" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_login.xml" value="0.3314814814814815" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_main.xml" value="0.3619791666666667" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_movie.xml" value="0.25" />
+        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_movie.xml" value="0.5" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_profile.xml" value="0.3619791666666667" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_reviews.xml" value="0.3619791666666667" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_setup_profile.xml" value="0.33" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/activity_view.xml" value="0.3619791666666667" />
         <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/grid_item.xml" value="0.25" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/layout/review_item.xml" value="0.275" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.283" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.283" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/mipmap-anydpi-v26/launcher.xml" value="0.196" />
-        <entry key="..\:/Android Studio/OlioHT/app/src/main/res/mipmap-anydpi-v26/launcher_round.xml" value="0.283" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/drawable/dropdownmenubackground.xml" value="0.4725" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/drawable/login_btn.xml" value="0.534" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/drawable/profile_taustanelio_bg.xml" value="0.534" />
@@ -33,11 +25,13 @@
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/activity_movie.xml" value="0.5" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/activity_profile.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/activity_review.xml" value="0.4180602006688963" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/activity_reviews.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/activity_view.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/color_spinner_layout.xml" value="0.5401041666666667" />
         <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/grid_item.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/list_item.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/list_item.xml" value="0.5" />
+        <entry key="..\:/Users/Matti Aalto/AndroidStudioProjects/OlioHT/app/src/main/res/layout/review_item.xml" value="0.5" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.128" />
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.154" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.128" />

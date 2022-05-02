@@ -51,6 +51,8 @@ public class User implements Serializable {
         this.mAge = mAge;
     }
 
+
+
     public ArrayList<Review> getReviews() {return this.reviews;}
     public void addReview(Review review) {reviews.add(review);};
 

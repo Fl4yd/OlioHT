@@ -70,4 +70,6 @@ public class movie {
     public ArrayList<Review> getReviews() {return this.reviews;}
     public void addReview(Review review) {reviews.add(review);
     }
+
+
 }

@@ -15,7 +15,6 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:textStyle="bold"
         android:maxLines="3"
         android:autoSizeTextType="uniform"
         android:autoSizeMaxTextSize="25dp"

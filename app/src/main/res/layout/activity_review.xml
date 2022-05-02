@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0"/>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/historyTitle"
-        app:layout_constraintBottom_toTopOf="@id/listView"
+        app:layout_constraintBottom_toTopOf="@id/listView1"
         app:srcCompat="@drawable/dropdownmenubackground" />
 
 

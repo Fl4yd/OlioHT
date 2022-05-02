@@ -4,13 +4,15 @@ public class Review {
     private String username;
     private String reviewtext;
     private String rating;
+    private int ID;
 
 
 
-    public Review(String Username, String reviewtext, String rating) {
+    public Review(String Username, String reviewtext, String rating, int ID) {
         this.username = Username;
         this.reviewtext = reviewtext;
         this.rating = rating;
+        this.ID = ID;
     }
 
     public String getRating() { return rating; }
