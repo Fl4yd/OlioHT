@@ -53,9 +53,12 @@ public class ReviewAdapter extends BaseAdapter {
                 view = inflater.inflate(R.layout.list_item, null);
                 TextView moviename = view.findViewById(R.id.movie_name_history);
                 TextView userscore = view.findViewById(R.id.user_score_history);
+                TextView userreview = view.findViewById(R.id.review_text_history);
+
                 ImageView movie_image = view.findViewById(R.id.list_image);
                 moviename.setText(Movies.getInstance().searchMovie(ID).getName());
                 userscore.setText("Your score: "+arrayList.get(i).getRating());
+                userreview.setText(arrayList.get(i).getReviewtext());
 
                 if (Movies.getInstance().searchMovie(ID).getPicURL() == null) {
                     movie_image.setImageResource(R.drawable.no_picture);
@@ -72,8 +75,8 @@ public class ReviewAdapter extends BaseAdapter {
                 TextView rating = view.findViewById(R.id.review_rating);
                 if (arrayList != null) {
                     review.setText(arrayList.get(i).getReviewtext());
-                    user.setText(arrayList.get(i).getUsername());
-                    rating.setText(arrayList.get(i).getRating());
+                    user.setText("User: "+arrayList.get(i).getUsername());
+                    rating.setText("Your rating: "+arrayList.get(i).getRating());
                 }
             }
 

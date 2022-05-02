@@ -58,4 +58,18 @@
         app:layout_constraintTop_toTopOf="@id/imagebackground"
         />
 
+    <TextView
+        android:id="@+id/review_text_history"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="reviewtext"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imagebackground"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintLeft_toRightOf="@id/list_image"
+        app:layout_constraintRight_toRightOf="@id/imagebackground"
+        app:layout_constraintTop_toTopOf="@id/user_score_history"
+        app:layout_constraintVertical_bias="0.311" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
