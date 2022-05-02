@@ -3,11 +3,19 @@ package com.example.olioht;
 public class Review {
     private String username;
     private String reviewtext;
+    private String rating;
 
-    public Review(String Username, String reviewtext) {
+
+
+    public Review(String Username, String reviewtext, String rating) {
         this.username = Username;
         this.reviewtext = reviewtext;
+        this.rating = rating;
     }
+
+    public String getRating() { return rating; }
+
+    public void setRating(String rating) { this.rating = rating; }
 
     public String getUsername() {
         return username;

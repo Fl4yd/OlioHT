@@ -10,9 +10,9 @@ public class ReviewSingleton {
         Reviews = new ArrayList<>();
     }
 
-    public void AddReview(String username, String reviewtext) {
+    public void AddReview(String username, String reviewtext, String rating) {
 
-        Reviews.add(new Review(username, reviewtext));
+        Reviews.add(new Review(username, reviewtext, rating));
     }
 
     public List<Review> getReviews() {
