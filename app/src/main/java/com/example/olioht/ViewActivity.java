@@ -42,17 +42,10 @@ public class ViewActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         readXML();
-        String[] names = new String[movies.size()];
-        String[] images = new String[movies.size()];
-
-        for (int i = 0; i < movies.size(); i++) {
-            names[i] = movies.get(i).getName();
-            images[i] = movies.get(i).getPicURL();
-        }
         setContentView(R.layout.activity_view);
         button = findViewById(R.id.profileButton);
         gridView = findViewById(R.id.gridView);
-        GridAdapter gridAdapter = new GridAdapter(ViewActivity.this, names, images);
+        Adapter gridAdapter = new Adapter(ViewActivity.this, movies, 0);
         gridView.setAdapter(gridAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -31,7 +31,7 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         listView = findViewById(R.id.listView);
-        ListAdapter listAdapter = new ListAdapter(HistoryActivity.this, names, images);
+        ListAdapter listAdapter = new ListAdapter(HistoryActivity.this, names, images, 0);
         listView.setAdapter(listAdapter);
     }
 }

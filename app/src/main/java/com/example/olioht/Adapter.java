@@ -10,25 +10,24 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class ListAdapter extends BaseAdapter {
+import java.util.ArrayList;
+
+public class Adapter extends BaseAdapter{
 
     Context context;
-    int id;
-    String[] name;
-    String[] image;
+    ArrayList<movie> arrayList;
     int mode;
     LayoutInflater inflater;
 
-    public ListAdapter(Context context, String[] name, String[] image, int mode) {
+    public Adapter(Context context, ArrayList<movie> arrayList, int mode) {
         this.context = context;
-        this.name = name;
-        this.image = image;
         this.mode = mode;
+        this.arrayList = arrayList;
     }
 
     @Override
     public int getCount() {
-        return name.length;
+        return arrayList.size();
     }
 
     @Override
@@ -48,20 +47,26 @@ public class ListAdapter extends BaseAdapter {
         }
         if (view == null) {
 
-            view = inflater.inflate(R.layout.list_item, null);
+            view = inflater.inflate(R.layout.grid_item, null);
         }
+
+
         if (this.mode == 0) {
-            ImageView imageView = view.findViewById(R.id.list_image);
-            TextView textView = view.findViewById(R.id.movie_name);
-
-            Picasso.get().load(image[i]).into(imageView);
-            textView.setText(name[i]);
-        }else if (this.mode == 1) {
-
-
-
+            ImageView imageView = view.findViewById(R.id.grid_image);
+            TextView textView = view.findViewById(R.id.item_name);
+            if (arrayList.get(i).getPicURL() == null) {
+                imageView.setImageResource(R.drawable.no_picture);
+            }else {
+                Picasso.get().load(arrayList.get(i).getPicURL()).into(imageView);
+            }
+            textView.setText(arrayList.get(i).getName());
+        } else if (this.mode == 1) {
 
         }
+
+
+
+
         return view;
     }
 }
