@@ -17,23 +17,73 @@
         android:textColor="@color/yellow_200"
         android:textStyle="bold"
         android:text="Movie reviews"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="0dp"
         app:layout_constraintHeight_percent="0.12"
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/writing_background"
         app:layout_constraintVertical_bias="0"/>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:flow_horizontalBias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.88"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writing_background" />
+
+    <ImageView
+        android:id="@+id/writing_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/historyTitle"
-        app:layout_constraintHeight_percent="0.88"/>
+        app:layout_constraintTop_toBottomOf="@+id/historyTitle"
+        app:layout_constraintBottom_toTopOf="@id/listView"
+        app:srcCompat="@drawable/dropdownmenubackground" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="260dp"
+        android:layout_height="55dp"
+        android:layout_marginRight="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/writing_background"
+        app:layout_constraintLeft_toLeftOf="@id/writing_background"
+        app:layout_constraintRight_toRightOf="@id/writing_background"
+        app:layout_constraintTop_toTopOf="@id/writing_background">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write review" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <Spinner
+        android:id="@+id/review_score_spinner"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
+        android:entries="@array/review_scores"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/writing_background"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+
+    <ImageView
+        android:id="@+id/upload_review_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_upload"
+        tools:layout_editor_absoluteX="316dp"
+        tools:layout_editor_absoluteY="79dp"
+        app:layout_constraintBottom_toBottomOf="@+id/writing_background"
+        app:layout_constraintEnd_toEndOf="@+id/writing_background"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toTopOf="@+id/writing_background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

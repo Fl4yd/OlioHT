@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class MovieActivity extends AppCompatActivity {
     TextView directors;
     String actorsString = "";
     TextView synopsis;
+    TextView reviews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class MovieActivity extends AppCompatActivity {
         actors = findViewById(R.id.actors);
         directors = findViewById(R.id.producers);
         synopsis = findViewById(R.id.setSynopsis);
+        reviews = (TextView)findViewById(R.id.movieReview);
+
 
         if (intent != null) {
             int ID = intent.getIntExtra("id", 0);
@@ -55,6 +59,15 @@ public class MovieActivity extends AppCompatActivity {
             System.out.println(this.actorsString);
 
         }
+
+        reviews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
+                startActivity(intent);
+            }
+        }
+        );
 
     }
 

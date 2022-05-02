@@ -45,7 +45,6 @@
             android:layout_width="300dp"
             android:layout_height="58dp"
             android:backgroundTint="@color/black"
-            android:entries="@array/Theatres_spinner"
             android:textSize="20sp"
             android:popupBackground="@color/yellow_200"
             app:layout_constraintBottom_toTopOf="@id/imageView5"
