@@ -50,6 +50,8 @@ public class ReviewActivity extends AppCompatActivity {
                 Editable text = reviewtextfield.getEditText().getText();
                 Review review = new Review(UserinfoBase.get().getCurrentUser().getmUser(), text.toString(), reviewrating.getSelectedItem().toString(), ID);
                 UserinfoBase.get().getCurrentUser().addReview(review);
+                UserinfoBase.get().saveData(ReviewActivity.this);
+                //UserinfoBase.get().getUserData(UserinfoBase.get().getCurrentUser().getmUser()).addReview(review);
                 Movies.getInstance().searchMovie(ID).addReview(review);
 
             }

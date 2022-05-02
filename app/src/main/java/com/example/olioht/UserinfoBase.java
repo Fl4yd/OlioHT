@@ -33,6 +33,7 @@ public class UserinfoBase implements Serializable {
     public void selectUser(String username) {
         this.currentUser = mUsers.get(username);
     }
+
     public User getCurrentUser () {
 
         return this.currentUser;
