@@ -8,6 +8,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+//Activity to show users ratings
 public class HistoryActivity extends AppCompatActivity {
     ArrayList<movie> movies = new ArrayList<>();
     ListView listView;

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
-
+//Shows users profile
 public class ProfileActivity extends AppCompatActivity {
 
     TextView outputField;

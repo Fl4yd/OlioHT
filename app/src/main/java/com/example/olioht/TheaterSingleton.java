@@ -3,7 +3,7 @@ package com.example.olioht;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
+// Theatre Singleton for the spinner
 public class TheaterSingleton implements Serializable {
     private List<Theatre> Theaters;
 
