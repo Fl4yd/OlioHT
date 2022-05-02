@@ -127,7 +127,7 @@ public class ViewActivity extends AppCompatActivity {
                     if (Movies.getInstance().searchMovie(ID) != null) {
                         System.out.println("Movie with ID: " + ID + " Has been added already!");
                     }else {
-                        Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
+                        Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, ID, picURL, actors, directors, synopsis));
                     }
 
                 }
