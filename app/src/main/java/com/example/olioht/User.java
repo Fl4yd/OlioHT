@@ -3,6 +3,8 @@ package com.example.olioht;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
+    //Object to store user information
 public class User implements Serializable {
     private String mUser;
     private String mTheatre;
@@ -17,14 +19,8 @@ public class User implements Serializable {
         this.mAge = mAge;
     }
 
-
-
     public String getmUser() {
         return mUser;
-    }
-
-    public void setmUser(String mUser) {
-        this.mUser = mUser;
     }
 
     public String getmTheatre() {
@@ -39,16 +35,8 @@ public class User implements Serializable {
         return mName;
     }
 
-    public void setmName(String mName) {
-        this.mName = mName;
-    }
-
     public int getmAge() {
         return mAge;
-    }
-
-    public void setmAge(int mAge) {
-        this.mAge = mAge;
     }
 
 

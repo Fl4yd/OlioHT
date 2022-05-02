@@ -77,14 +77,6 @@ public class ReviewAdapter extends BaseAdapter {
             }
 
         }
-        if (mode == 0) {
-            //History
-
-        }else if (mode == 1) {
-            //Reviews
-        }
-
-
 
 
         return view;

@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                     if (checkCredentials == true) {
                         Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         UserinfoBase.get().loadData(LoginActivity.this);
-                        Movies.getInstance().loadData(LoginActivity.this);
                         System.out.println(Movies.getInstance().getArrayList().size());
                         UserinfoBase.get().selectUser(user);
                         Login();
@@ -87,7 +86,6 @@ public class LoginActivity extends AppCompatActivity {
         try {
             String ID;
             String name;
-            storeData[] storeData_array;
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             String urlString = "https://www.finnkino.fi/xml/TheatreAreas/";
             Document doc = builder.parse(urlString);
@@ -95,23 +93,17 @@ public class LoginActivity extends AppCompatActivity {
 
             NodeList nList = doc.getDocumentElement().getElementsByTagName("TheatreArea");
 
-            storeData_array = new storeData[nList.getLength()];
 
             for (int i = 0; i < nList.getLength(); i++) {
-                storeData_array[i] = new storeData();
                 Node node = nList.item(i);
-                // System.out.println("Element is this: " + node.getNodeName());
 
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
 
                     ID = element.getElementsByTagName("ID").item(0).getTextContent();
-                    storeData_array[i].setID(ID);
-                    //System.out.println("Theatre ID: "+storeData_array[i].getID());
+
                     name = element.getElementsByTagName("Name").item(0).getTextContent();
                     TheaterSingleton.get().AddTheaterString(name,ID);
-                    //System.out.println("Theatre name: "+storeData_array[i].getName());
-                    storeData_array[i].storeData(name);
 
                 }
             }

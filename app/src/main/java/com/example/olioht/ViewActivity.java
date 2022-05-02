@@ -29,11 +29,14 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+
+
+//View to see all the movies and get access to movie page
+
 public class ViewActivity extends AppCompatActivity {
     ArrayList<movie> movies = new ArrayList<movie>();
     GridView gridView;
     Button button;
-    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +88,7 @@ public class ViewActivity extends AppCompatActivity {
             int releaseYear;
             int duration;
             String ageLimit;
-            String genres;
             int ID;
-            String picText;
             String picURL;
             String actors;
             String directors;
@@ -114,8 +115,6 @@ public class ViewActivity extends AppCompatActivity {
                     } else {
                         ageLimit = "https://media.finnkino.fi/images/rating_large_S.png";
                     }
-                    genres = element.getElementsByTagName("Genres").item(0).getTextContent();
-                    picText = element.getElementsByTagName("Synopsis").item(0).getTextContent();
                     if (element.getElementsByTagName("EventMediumImagePortrait").item(0) != null) {
                         picURL = element.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
                     }else {
@@ -124,11 +123,8 @@ public class ViewActivity extends AppCompatActivity {
                     actors = element.getElementsByTagName("Cast").item(0).getTextContent();
                     directors = element.getElementsByTagName("Directors").item(0).getTextContent();
                     synopsis = element.getElementsByTagName("Synopsis").item(0).getTextContent();
-                    if (Movies.getInstance().searchMovie(ID) != null) {
-                        System.out.println("Movie with ID: " + ID + " Has been added already!");
-                    }else {
                         Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, ID, picURL, actors, directors, synopsis));
-                    }
+
 
                 }
             }
@@ -142,7 +138,6 @@ public class ViewActivity extends AppCompatActivity {
         } catch (NullPointerException e) {
             e.printStackTrace();
         } finally {
-            Movies.getInstance().saveData(ViewActivity.this);
         }
 
     }

@@ -10,8 +10,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.HashMap;
 
-// Singleton profiilitietoja varten
 
+    //Singleton for the userdata
 public class UserinfoBase implements Serializable {
     private HashMap<String, User> mUsers;
     private User currentUser;
@@ -42,6 +42,8 @@ public class UserinfoBase implements Serializable {
         return mUsers.get(username);
     }
 
+
+    //Loads data from internal storage
     public void loadData(Context context) {
         try {
 
@@ -57,6 +59,8 @@ public class UserinfoBase implements Serializable {
         }
 
 }
+
+    //Saves data on internal storage
     public void saveData(Context context) {
         try {
         FileOutputStream fos = context.openFileOutput("userinfo.txt", Context.MODE_PRIVATE);
