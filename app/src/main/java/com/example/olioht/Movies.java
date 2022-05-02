@@ -30,6 +30,16 @@ public class Movies extends HashMap<String, User> implements Serializable {
         movie Movie = movies.get(ID);
         return Movie;
     }
+
+    public Boolean contains(String string) {
+        for (int i = 0; i < movies.size(); i++) {
+            if (moviesArrayList.get(i).getName().contains(string)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public ArrayList<movie> getArrayList() {
         return this.moviesArrayList;
     }

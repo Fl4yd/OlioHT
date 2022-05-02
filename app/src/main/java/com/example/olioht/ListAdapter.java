@@ -59,8 +59,6 @@ public class ListAdapter extends BaseAdapter {
         }else if (this.mode == 1) {
 
 
-
-
         }
         return view;
     }

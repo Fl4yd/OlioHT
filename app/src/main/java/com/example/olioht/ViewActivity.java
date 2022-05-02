@@ -42,6 +42,10 @@ public class ViewActivity extends AppCompatActivity {
         movies = Movies.getInstance().getArrayList();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         readXML();
+
+
+
+
         setContentView(R.layout.activity_view);
         button = findViewById(R.id.profileButton);
         gridView = findViewById(R.id.gridView);
@@ -73,8 +77,6 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     public void readXML () {
-        int counter1 = 0;
-        int counter2 = 0;
         try {
             String title;
             String time;

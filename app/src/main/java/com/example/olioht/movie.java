@@ -8,7 +8,6 @@ public class movie {
     private int releaseYear;
     private int duration;
     private String ageLimit;
-    //private ArrayList<String> genres = new ArrayList<String>();
     private String genres;
     private int ID;
     private String picText;

@@ -55,6 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
                     UserinfoBase.get().loadData(ProfileActivity.this);
                     outputField.setText(theatreSpinner.getSelectedItem().toString());
                     UserinfoBase.get().getCurrentUser().setmTheatre(theatreSpinner.getSelectedItem().toString());
+                    UserinfoBase.get().getUserData(UserinfoBase.get().getCurrentUser().getmName()).setmTheatre(theatreSpinner.getSelectedItem().toString());
                     UserinfoBase.get().saveData(ProfileActivity.this);
                 }
 

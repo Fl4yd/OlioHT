@@ -2,6 +2,7 @@ package com.example.olioht;
 
 import android.content.Context;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -44,13 +45,14 @@ public class UserinfoBase implements Serializable {
 
     public void loadData(Context context) {
         try {
-            System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        FileInputStream fis = context.openFileInput("userinfo.set");
-        ObjectInputStream ois = null;
-        ois = new ObjectInputStream(fis);
-        this.mUsers = (Movies) ois.readObject();
-        ois.close();
-        fis.close();
+
+                FileInputStream fis = context.openFileInput("userinfo.txt");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                this.mUsers = (HashMap) ois.readObject();
+                ois.close();
+                fis.close();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch(ClassNotFoundException e) {
@@ -60,12 +62,11 @@ public class UserinfoBase implements Serializable {
 }
     public void saveData(Context context) {
         try {
-        FileOutputStream fos = context.openFileOutput("userinfo.ser", Context.MODE_PRIVATE);
+        FileOutputStream fos = context.openFileOutput("userinfo.txt", Context.MODE_PRIVATE);
         ObjectOutputStream ous = new ObjectOutputStream(fos);
         ous.writeObject(this.mUsers);
         fos.close();
         ous.close();
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

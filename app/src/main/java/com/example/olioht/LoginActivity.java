@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         readXML();
+        System.out.println(LoginActivity.this.getFilesDir());
         DB = new DatabaseHelper(this);
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
@@ -48,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
                 System.out.println("Working Directory = " + System.getProperty("user.dir"));
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
-
                 if (user.equals("") || pass.equals("")) {
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }else {
