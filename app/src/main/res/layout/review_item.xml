@@ -25,7 +25,9 @@
         android:id="@+id/user_name_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/yellow_200"
+        />
 
     <TextView
         android:id="@+id/review_rating"

@@ -51,8 +51,6 @@ public class UserinfoBase implements Serializable {
                 this.mUsers = (HashMap) ois.readObject();
                 ois.close();
                 fis.close();
-
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch(ClassNotFoundException e) {

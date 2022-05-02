@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.olioht.databinding.ActivityMainBinding;
@@ -32,6 +33,7 @@ public class ViewActivity extends AppCompatActivity {
     ArrayList<movie> movies = new ArrayList<movie>();
     GridView gridView;
     Button button;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,19 @@ public class ViewActivity extends AppCompatActivity {
                 ProfileView();
             }
         });
+/*        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                return false;
+            }
+        });*/
 
     }
     public void ProfileView() {
