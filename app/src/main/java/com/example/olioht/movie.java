@@ -1,5 +1,7 @@
 package com.example.olioht;
 
+import java.util.ArrayList;
+
 public class movie {
     private String name;
     private String time;
@@ -14,6 +16,7 @@ public class movie {
     private String actors;
     private String directors;
     private String synopsis;
+    private ArrayList<Review> reviews = new ArrayList<Review>();
 
     public movie(String name, String time, int releaseYear, int duration, String ageLimit, String genres, int ID, String picText, String picURL, String actors, String directors, String synopsis) {
         this.name = name;
@@ -64,4 +67,8 @@ public class movie {
 
     public String getSynopsis() {return this.synopsis;}
     public void setSynopsis(String synopsis) { this.synopsis = synopsis; }
+
+    public ArrayList<Review> getReviews() {return this.reviews;}
+    public void addReview(Review review) {reviews.add(review);
+    }
 }

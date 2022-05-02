@@ -28,6 +28,7 @@ public class SetupProfileActivity extends AppCompatActivity {
     String selectedTheatre;
     int age;
     Spinner theatreSpinner;
+    Button reLogin;
 
     DatabaseHelper DB;
     @Override
@@ -43,7 +44,7 @@ public class SetupProfileActivity extends AppCompatActivity {
         details = findViewById(R.id.details2);
         registerButton = findViewById(R.id.register);
         name = nameTextView.getText().toString();
-
+        reLogin = findViewById(R.id.reLogin);
         theatreSpinner = findViewById(R.id.profileSpinner);
         List<Theatre> Theatres = TheaterSingleton.get().getTheaters();
         ArrayAdapter<Theatre> adapter = new ArrayAdapter<Theatre>(this, android.R.layout.simple_spinner_item, Theatres);
@@ -77,6 +78,13 @@ public class SetupProfileActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
+            }
+        });
+        reLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(SetupProfileActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 

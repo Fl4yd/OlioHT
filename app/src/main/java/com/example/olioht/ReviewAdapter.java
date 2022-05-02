@@ -12,14 +12,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class Adapter extends BaseAdapter{
+public class ReviewAdapter extends BaseAdapter {
 
     Context context;
-    ArrayList<movie> arrayList;
+    ArrayList<Review> arrayList;
     int mode;
     LayoutInflater inflater;
 
-    public Adapter(Context context, ArrayList<movie> arrayList, int mode) {
+    public ReviewAdapter(Context context, ArrayList<Review> arrayList, int mode) {
         this.context = context;
         this.mode = mode;
         this.arrayList = arrayList;
@@ -47,19 +47,20 @@ public class Adapter extends BaseAdapter{
         }
         if (view == null) {
 
-            view = inflater.inflate(R.layout.grid_item, null);
-        }
+            if (mode == 0) {
+                view = inflater.inflate(R.layout.list_item, null);
 
+            }else if (mode == 1) {
+                view = inflater.inflate(R.layout.review_item, null);
 
-        if (this.mode == 0) {
-            ImageView imageView = view.findViewById(R.id.grid_image);
-            TextView textView = view.findViewById(R.id.item_name);
-            if (arrayList.get(i).getPicURL() == null) {
-                imageView.setImageResource(R.drawable.no_picture);
-            }else {
-                Picasso.get().load(arrayList.get(i).getPicURL()).into(imageView);
             }
-            textView.setText(arrayList.get(i).getName());
+
+        }
+        if (mode == 0) {
+            //History
+
+        }else if (mode == 1) {
+            //Reviews
         }
 
 

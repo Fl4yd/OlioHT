@@ -39,7 +39,7 @@ public class ViewActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         getSupportActionBar().hide();
-
+        movies = Movies.getInstance().getArrayList();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         readXML();
         setContentView(R.layout.activity_view);
@@ -123,7 +123,6 @@ public class ViewActivity extends AppCompatActivity {
                     actors = element.getElementsByTagName("Cast").item(0).getTextContent();
                     directors = element.getElementsByTagName("Directors").item(0).getTextContent();
                     synopsis = element.getElementsByTagName("Synopsis").item(0).getTextContent();
-                    movies.add(new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
                     Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
                 }
             }
