@@ -66,19 +66,6 @@ public class ViewActivity extends AppCompatActivity {
                 ProfileView();
             }
         });
-/*        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-
-                return false;
-            }
-        });*/
 
     }
     public void ProfileView() {
@@ -105,12 +92,10 @@ public class ViewActivity extends AppCompatActivity {
             String actors;
             String directors;
             String synopsis;
-            storeData[] storeData_array;
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             String urlString = "https://www.finnkino.fi/xml/Events/";
             Document doc = builder.parse(urlString);
             doc.getDocumentElement().normalize();
-            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getDocumentElement().getElementsByTagName("Event");
 
@@ -118,7 +103,7 @@ public class ViewActivity extends AppCompatActivity {
                 Node node = nList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
-
+                    ID = Integer.parseInt(element.getElementsByTagName("ID").item(0).getTextContent());
                     title = element.getElementsByTagName("Title").item(0).getTextContent();
                     time = element.getElementsByTagName("dtLocalRelease").item(0).getTextContent();
                     releaseYear = Integer.parseInt(element.getElementsByTagName("ProductionYear").item(0).getTextContent());
@@ -130,7 +115,6 @@ public class ViewActivity extends AppCompatActivity {
                         ageLimit = "https://media.finnkino.fi/images/rating_large_S.png";
                     }
                     genres = element.getElementsByTagName("Genres").item(0).getTextContent();
-                    ID = Integer.parseInt(element.getElementsByTagName("ID").item(0).getTextContent());
                     picText = element.getElementsByTagName("Synopsis").item(0).getTextContent();
                     if (element.getElementsByTagName("EventMediumImagePortrait").item(0) != null) {
                         picURL = element.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
@@ -140,7 +124,12 @@ public class ViewActivity extends AppCompatActivity {
                     actors = element.getElementsByTagName("Cast").item(0).getTextContent();
                     directors = element.getElementsByTagName("Directors").item(0).getTextContent();
                     synopsis = element.getElementsByTagName("Synopsis").item(0).getTextContent();
-                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
+                    if (Movies.getInstance().searchMovie(ID) != null) {
+                        System.out.println("Movie with ID: " + ID + " Has been added already!");
+                    }else {
+                        Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, genres, ID, picText, picURL, actors, directors, synopsis));
+                    }
+
                 }
             }
 
@@ -152,6 +141,9 @@ public class ViewActivity extends AppCompatActivity {
             e.printStackTrace();
         } catch (NullPointerException e) {
             e.printStackTrace();
+        } finally {
+            Movies.getInstance().saveData(ViewActivity.this);
         }
+
     }
 }

@@ -46,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Working Directory = " + System.getProperty("user.dir"));
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
                 if (user.equals("") || pass.equals("")) {
@@ -56,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
                     if (checkCredentials == true) {
                         Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
                         UserinfoBase.get().loadData(LoginActivity.this);
+                        Movies.getInstance().loadData(LoginActivity.this);
+                        System.out.println(Movies.getInstance().getArrayList().size());
                         UserinfoBase.get().selectUser(user);
                         Login();
 
@@ -63,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                     }
                 }
-
 
 
             }
@@ -92,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
             String urlString = "https://www.finnkino.fi/xml/TheatreAreas/";
             Document doc = builder.parse(urlString);
             doc.getDocumentElement().normalize();
-           // System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getDocumentElement().getElementsByTagName("TheatreArea");
 

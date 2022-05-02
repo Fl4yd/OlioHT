@@ -56,7 +56,6 @@ public class MovieActivity extends AppCompatActivity {
             Picasso.get().load(Movie.getPicURL()).into(moviePicture);
             parseString(Movie.getActors());
             actors.setText(this.actorsString);
-            System.out.println(this.actorsString);
 
         }
 

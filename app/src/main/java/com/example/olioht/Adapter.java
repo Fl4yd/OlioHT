@@ -5,17 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-public class Adapter extends BaseAdapter{
+public class Adapter extends BaseAdapter {
 
     Context context;
     ArrayList<movie> arrayList;
+    ArrayList<movie> arraylistFiltered;
     int mode;
     LayoutInflater inflater;
 
@@ -23,6 +27,7 @@ public class Adapter extends BaseAdapter{
         this.context = context;
         this.mode = mode;
         this.arrayList = arrayList;
+        arraylistFiltered = arrayList;
     }
 
     @Override
@@ -67,4 +72,5 @@ public class Adapter extends BaseAdapter{
 
         return view;
     }
+
 }

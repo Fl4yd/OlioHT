@@ -1,6 +1,8 @@
 package com.example.olioht;
 
-public class Review {
+import java.io.Serializable;
+
+public class Review implements Serializable {
     private String username;
     private String reviewtext;
     private String rating;

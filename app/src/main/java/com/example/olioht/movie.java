@@ -1,8 +1,9 @@
 package com.example.olioht;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class movie {
+public class movie implements Serializable {
     private String name;
     private String time;
     private int releaseYear;
