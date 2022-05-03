@@ -51,19 +51,23 @@
         app:layout_constraintWidth_percent="0.55"/>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/searchLine"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:width="0dp"
         android:background="@android:color/transparent"
         android:hint="Search..."
         android:textSize="20dp"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
         app:layout_constraintBottom_toBottomOf="@id/searchBox"
         app:layout_constraintEnd_toEndOf="@id/searchBox"
         app:layout_constraintStart_toStartOf="@id/searchBox"
         app:layout_constraintTop_toTopOf="@id/searchBox"
         app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.5"
+
+        />
 
     <ImageView
         android:layout_width="100dp"

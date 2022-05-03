@@ -9,7 +9,8 @@ public class movie implements Serializable {
     private String time;
     private int releaseYear;
     private int duration;
-    private String ageLimit;
+    private int ageLimit;
+    private String ageLimitUrl;
     private int ID;
     private String picURL;
     private String actors;
@@ -17,12 +18,13 @@ public class movie implements Serializable {
     private String synopsis;
     private ArrayList<Review> reviews = new ArrayList<>();
 
-    public movie(String name, String time, int releaseYear, int duration, String ageLimit, int ID, String picURL, String actors, String directors, String synopsis) {
+    public movie(String name, String time, int releaseYear, int duration, int ageLimit, String ageLimitUrl, int ID, String picURL, String actors, String directors, String synopsis) {
         this.name = name;
         this.time = time;
         this.releaseYear = releaseYear;
         this.duration = duration;
         this.ageLimit = ageLimit;
+        this.ageLimitUrl = ageLimitUrl;
         this.ID = ID;
         this.picURL = picURL;
         this.actors = actors;
@@ -36,8 +38,9 @@ public class movie implements Serializable {
 
     public int getDuration() { return duration; }
 
-    public String getAgeLimit() { return ageLimit; }
+    public int getAgeLimit() { return ageLimit; }
 
+    public String getAgeLimitUrl() {return ageLimitUrl;}
     public int getID() { return ID; }
     public void setID(int ID) { this.ID = ID; }
 

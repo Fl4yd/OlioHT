@@ -28,16 +28,12 @@ public class UserinfoBase implements Serializable {
 
     public void addUser(String username, int age, String name, String theatre) {
         mUsers.put(username,new User(username, theatre, name, age));
-
     }
     public void selectUser(String username) {
         this.currentUser = mUsers.get(username);
     }
 
-    public User getCurrentUser () {
-
-        return this.currentUser;
-    }
+    public User getCurrentUser () { return this.currentUser; }
 
     public User getUserData(String username){
         return mUsers.get(username);

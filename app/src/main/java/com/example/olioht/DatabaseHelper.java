@@ -39,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
-
+    //Adds user credentials to database
     public Boolean addCredentials(String userName, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -53,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-
+    //Checks if the username is taken in the databsae
     public Boolean checkusername(String username) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_USERNAME + " = ?", new String[] {username});
@@ -63,6 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+    //Checks if the username and password matches from the database
     public Boolean checkCredentials(String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_USERNAME + " = ? AND " + COLUMN_PASSWORD + " = ?", new String[] {username, password});

@@ -30,7 +30,6 @@ public class ReviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_review);
 
 
-
         Intent intent = this.getIntent();
         int ID = intent.getIntExtra("id", 0);
         reviewtextfield = findViewById(R.id.textInputLayout);
@@ -42,8 +41,6 @@ public class ReviewActivity extends AppCompatActivity {
         listView.setAdapter(reviewAdapter);
 
 
-
-
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +48,6 @@ public class ReviewActivity extends AppCompatActivity {
                 Review review = new Review(UserinfoBase.get().getCurrentUser().getmUser(), text.toString(), reviewrating.getSelectedItem().toString(), ID);
                 UserinfoBase.get().getCurrentUser().addReview(review);
                 UserinfoBase.get().saveData(ReviewActivity.this);
-                //UserinfoBase.get().getUserData(UserinfoBase.get().getCurrentUser().getmUser()).addReview(review);
                 Movies.getInstance().searchMovie(ID).addReview(review);
 
             }

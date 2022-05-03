@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.olioht.databinding.ActivityMainBinding;
@@ -24,6 +28,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -35,8 +40,12 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class ViewActivity extends AppCompatActivity {
     ArrayList<movie> movies = new ArrayList<movie>();
+    ArrayList<movie> moviesRated = new ArrayList<movie>();
+    int age = 0;
     GridView gridView;
     Button button;
+    EditText editText;
+    Adapter gridAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +53,16 @@ public class ViewActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         getSupportActionBar().hide();
-        movies = Movies.getInstance().getArrayList();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        int age  = UserinfoBase.get().getCurrentUser().getmAge();
+        System.out.println(age);
         readXML();
+
+
+
+        movies = Movies.getInstance().getAgeLimitedList(age);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
 
 
@@ -54,7 +70,8 @@ public class ViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view);
         button = findViewById(R.id.profileButton);
         gridView = findViewById(R.id.gridView);
-        Adapter gridAdapter = new Adapter(ViewActivity.this, movies, 0);
+        editText = findViewById(R.id.searchLine);
+        gridAdapter = new Adapter(ViewActivity.this, movies);
         gridView.setAdapter(gridAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -69,6 +86,25 @@ public class ViewActivity extends AppCompatActivity {
                 ProfileView();
             }
         });
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                movies = Movies.getInstance().getFilteredList(editText.getText().toString());
+                Adapter gridAdapter = new Adapter(ViewActivity.this, movies);
+                gridView.setAdapter(gridAdapter);
+                gridAdapter.notifyDataSetChanged();
+                return false;
+            }
+        });
+
+    }
+
+    public void FilterView(String text, Adapter adapter) {
+        System.out.print(editText.getText().toString());
+        movies = Movies.getInstance().getFilteredList(editText.getText().toString());
+        System.out.println(movies.size());
+
+
 
     }
     public void ProfileView() {
@@ -88,6 +124,7 @@ public class ViewActivity extends AppCompatActivity {
             int releaseYear;
             int duration;
             String ageLimit;
+            String ageLimitUrl;
             int ID;
             String picURL;
             String actors;
@@ -110,10 +147,14 @@ public class ViewActivity extends AppCompatActivity {
                     releaseYear = Integer.parseInt(element.getElementsByTagName("ProductionYear").item(0).getTextContent());
                     duration = Integer.parseInt(element.getElementsByTagName("LengthInMinutes").item(0).getTextContent());
                     ageLimit = element.getElementsByTagName("Rating").item(0).getTextContent();
-                    if (ageLimit != "(none)") {
-                        ageLimit = element.getElementsByTagName("RatingImageUrl").item(0).getTextContent();
+                    ageLimit = ageLimit.trim();
+
+                    //XML file has "undefined" ratings this fixes the bug by implementing hard coded ratings
+                    if (ageLimit != "(none)" && !ageLimit.contains("Luok") && !ageLimit.contains("Tulossa") && !ageLimit.contains("S")) {
+                        ageLimitUrl = element.getElementsByTagName("RatingImageUrl").item(0).getTextContent();
                     } else {
-                        ageLimit = "https://media.finnkino.fi/images/rating_large_S.png";
+                        ageLimitUrl = "https://media.finnkino.fi/images/rating_large_S.png";
+                        ageLimit = "0";
                     }
                     if (element.getElementsByTagName("EventMediumImagePortrait").item(0) != null) {
                         picURL = element.getElementsByTagName("EventMediumImagePortrait").item(0).getTextContent();
@@ -123,8 +164,7 @@ public class ViewActivity extends AppCompatActivity {
                     actors = element.getElementsByTagName("Cast").item(0).getTextContent();
                     directors = element.getElementsByTagName("Directors").item(0).getTextContent();
                     synopsis = element.getElementsByTagName("Synopsis").item(0).getTextContent();
-                        Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, ageLimit, ID, picURL, actors, directors, synopsis));
-
+                    Movies.getInstance().addMovie(ID ,new movie(title, time, releaseYear, duration, Integer.parseInt(ageLimit), ageLimitUrl, ID, picURL, actors, directors, synopsis));
 
                 }
             }

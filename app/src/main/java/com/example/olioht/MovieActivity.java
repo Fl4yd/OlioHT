@@ -47,20 +47,7 @@ public class MovieActivity extends AppCompatActivity {
 
         if (intent != null) {
             int ID = intent.getIntExtra("id", 0);
-
-            movie Movie = Movies.getInstance().searchMovie(ID);
-            movieName.setText(Movie.getName());
-            productionYear.setText(String.valueOf(Movie.getReleaseYear()));
-            duration.setText(getTimeString(Movie.getDuration()));
-            directors.setText(Movie.getDirectors());
-            synopsis.setText(Movie.getSynopsis());
-            Picasso.get().load(Movie.getAgeLimit()).into(ageLimit);
-            Picasso.get().load(Movie.getPicURL()).into(moviePicture);
-            parseString(Movie.getActors());
-            getDirectorsString(Movie.getDirectors());
-            actors.setText(this.actorsString);
-            directors.setText(this.directorsString);
-
+            setResources(ID);
 
         }
 
@@ -72,6 +59,26 @@ public class MovieActivity extends AppCompatActivity {
             }
         }
         );
+
+
+    }
+    public void setResources(int ID) {
+        movie Movie = Movies.getInstance().searchMovie(ID);
+        movieName.setText(Movie.getName());
+        productionYear.setText(String.valueOf(Movie.getReleaseYear()));
+        duration.setText(getTimeString(Movie.getDuration()));
+        directors.setText(Movie.getDirectors());
+        synopsis.setText(Movie.getSynopsis());
+        Picasso.get().load(Movie.getAgeLimitUrl()).into(ageLimit);
+        if (Movie.getPicURL() == null) {
+            moviePicture.setImageResource(R.drawable.no_picture);
+        }else {
+            Picasso.get().load(Movie.getPicURL()).into(moviePicture);
+        }
+        parseString(Movie.getActors());
+        getDirectorsString(Movie.getDirectors());
+        actors.setText(this.actorsString);
+        directors.setText(this.directorsString);
 
     }
     public void ReviewView(int ID) {

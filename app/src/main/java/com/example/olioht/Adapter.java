@@ -23,7 +23,7 @@ public class Adapter extends BaseAdapter {
     int mode;
     LayoutInflater inflater;
 
-    public Adapter(Context context, ArrayList<movie> arrayList, int mode) {
+    public Adapter(Context context, ArrayList<movie> arrayList) {
         this.context = context;
         this.mode = mode;
         this.arrayList = arrayList;
@@ -55,8 +55,6 @@ public class Adapter extends BaseAdapter {
             view = inflater.inflate(R.layout.grid_item, null);
         }
 
-
-        if (this.mode == 0) {
             ImageView imageView = view.findViewById(R.id.grid_image);
             TextView textView = view.findViewById(R.id.item_name);
             if (arrayList.get(i).getPicURL() == null) {
@@ -65,7 +63,7 @@ public class Adapter extends BaseAdapter {
                 Picasso.get().load(arrayList.get(i).getPicURL()).into(imageView);
             }
             textView.setText(arrayList.get(i).getName());
-        }
+
 
 
 
