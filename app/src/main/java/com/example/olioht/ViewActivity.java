@@ -13,7 +13,6 @@ import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.olioht.databinding.ActivityMainBinding;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
