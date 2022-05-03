@@ -10,6 +10,8 @@ public class User implements Serializable {
     private String mTheatre;
     private String mName;
     private int mAge;
+
+    // The Arraylist for the reviews made by this specific user(this is for the movie history)
     ArrayList<Review> reviews = new ArrayList<>();
 
     public User(String mUser, String mTheatre, String mName, int mAge) {

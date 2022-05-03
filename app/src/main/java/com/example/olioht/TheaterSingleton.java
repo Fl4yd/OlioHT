@@ -3,7 +3,7 @@ package com.example.olioht;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-// Theatre Singleton for the spinner
+// Theatre Singleton for the spinners, has the name and the theatre ID
 public class TheaterSingleton implements Serializable {
     private List<Theatre> Theaters;
 
@@ -21,6 +21,8 @@ public class TheaterSingleton implements Serializable {
 
     private static TheaterSingleton TheatersBase;
 
+    // When you want to get or add information from or to the arraylist of theaters, this method checks if the object is already created
+    // if not, it creates it here privately
     public static TheaterSingleton get() {
         if (TheatersBase == null) {
             TheatersBase = new TheaterSingleton();

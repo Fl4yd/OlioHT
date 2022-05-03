@@ -12,8 +12,10 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-//Adapter for the movie history/reviews
+
 public class ReviewAdapter extends BaseAdapter {
+
+    //Adapter for the movie history/reviews layouts
 
     Context context;
     ArrayList<Review> arrayList;

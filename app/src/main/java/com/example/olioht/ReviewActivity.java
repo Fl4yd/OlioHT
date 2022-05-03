@@ -30,6 +30,8 @@ public class ReviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_review);
 
 
+// constructs the layout of the Reviewview, from the review entries in the review arraylist of this movie in Movies.
+
         Intent intent = this.getIntent();
         int ID = intent.getIntExtra("id", 0);
         reviewtextfield = findViewById(R.id.textInputLayout);
@@ -40,6 +42,10 @@ public class ReviewActivity extends AppCompatActivity {
         ReviewAdapter reviewAdapter = new ReviewAdapter(ReviewActivity.this, Movies.getInstance().searchMovie(ID).getReviews(), 1);
         listView.setAdapter(reviewAdapter);
 
+
+
+// The method that adds the review to the user specific array list,
+// and the movie specific arraylist of reviews. Values are your writing on the review and the selected rating.
 
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
