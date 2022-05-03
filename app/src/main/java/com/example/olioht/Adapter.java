@@ -18,16 +18,12 @@ import java.util.Locale;
 public class Adapter extends BaseAdapter {
 
     Context context;
-    ArrayList<movie> arrayList;
-    ArrayList<movie> arraylistFiltered;
-    int mode;
+    private ArrayList<movie> arrayList;
     LayoutInflater inflater;
 
     public Adapter(Context context, ArrayList<movie> arrayList) {
         this.context = context;
-        this.mode = mode;
         this.arrayList = arrayList;
-        arraylistFiltered = arrayList;
     }
 
     @Override

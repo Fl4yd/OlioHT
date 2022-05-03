@@ -47,11 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_USERNAME, userName);
         cv.put(COLUMN_PASSWORD, password);
         long result = db.insert(TABLE_NAME, null, cv);
-        if (result == -1){
-            return false;
-        }else {
-            return true;
-        }
+        return result == -1;
     }
     //Checks if the username is taken in the databsae
     public Boolean checkusername(String username) {
