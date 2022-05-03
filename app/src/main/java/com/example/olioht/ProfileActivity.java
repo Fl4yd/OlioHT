@@ -44,6 +44,9 @@ public class ProfileActivity extends AppCompatActivity {
         age.setText(String.valueOf(UserinfoBase.get().getCurrentUser().getmAge()));
         outputField.setText(UserinfoBase.get().getCurrentUser().getmTheatre());
 
+        // Here is the method for the spinner in profile, when a theatre is selected,
+        // it uploads the the change to the profile information singleton(UserInfoBase)
+
         theatreSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -64,6 +67,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+        //Button to get to historyview
         buttonHis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -11,13 +11,17 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 
-    //Singleton for the userdata
+    //Singleton for the userdata that has username, age, name and home theatre for the profile
+
 public class UserinfoBase implements Serializable {
     private HashMap<String, User> mUsers;
     private User currentUser;
     private UserinfoBase() {
         mUsers = new HashMap<String, User>();
     }
+
+    // When you want to get or add information from or to the hashmap of users, this method checks if the object is already created
+    // if not, it creates it here privately
     public static UserinfoBase get() {
         if (mUsersBase == null) {
             mUsersBase = new UserinfoBase();

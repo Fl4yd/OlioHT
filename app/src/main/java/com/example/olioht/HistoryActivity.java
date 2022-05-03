@@ -21,7 +21,7 @@ public class HistoryActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_history);
-
+// constructs the layout of the historyview, from the review entries in the review arraylist of this profile in the UserInfoBase.
         listView = findViewById(R.id.listView);
         ReviewAdapter reviewAdapter = new ReviewAdapter(HistoryActivity.this, UserinfoBase.get().getCurrentUser().getReviews(), 0);
         listView.setAdapter(reviewAdapter);
