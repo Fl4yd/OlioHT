@@ -1,8 +1,10 @@
 package com.example.olioht;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.KeyEvent;
@@ -61,10 +63,6 @@ public class ViewActivity extends AppCompatActivity {
         movies = Movies.getInstance().getAgeLimitedList(age);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
-
-
 
         setContentView(R.layout.activity_view);
         button = findViewById(R.id.profileButton);

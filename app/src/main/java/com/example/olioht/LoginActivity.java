@@ -26,7 +26,6 @@ import javax.xml.parsers.ParserConfigurationException;
 //Login page
 
 public class LoginActivity extends AppCompatActivity {
-
     DatabaseHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +37,13 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         readXML();
-        System.out.println(LoginActivity.this.getFilesDir());
         DB = new DatabaseHelper(this);
-        TextView username = (TextView) findViewById(R.id.username);
-        TextView password = (TextView) findViewById(R.id.password);
+        TextView username =  findViewById(R.id.username);
+        TextView password =  findViewById(R.id.password);
 
-        Button loginbtn = (Button) findViewById(R.id.login);
-        Button createAccountBtn = (Button) findViewById(R.id.createAccount);
+
+        Button loginbtn = findViewById(R.id.login);
+        Button createAccountBtn =  findViewById(R.id.createAccount);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
                     if (checkCredentials == true) {
                         Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         UserinfoBase.get().loadData(LoginActivity.this);
-                        System.out.println(Movies.getInstance().getArrayList().size());
                         UserinfoBase.get().selectUser(user);
                         Login();
 
