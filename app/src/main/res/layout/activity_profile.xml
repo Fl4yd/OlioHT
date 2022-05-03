@@ -18,11 +18,11 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="218dp"
             app:layout_constraintBottom_toTopOf="@+id/logo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView6"
             app:layout_constraintVertical_bias="0.36"
@@ -64,26 +64,24 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/ageField"
             app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintHorizontal_bias="0.446"
+            app:layout_constraintHorizontal_bias="0.073"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.605" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/ageField"
             android:layout_width="120dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="88dp"
             android:text="@string/user_age"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView5"
             app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintHorizontal_bias="0.446"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintLeft_toRightOf="@id/textView2"
             app:layout_constraintTop_toTopOf="@+id/imageView5"
             app:layout_constraintVertical_bias="0.739" />
 
@@ -96,7 +94,7 @@
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/ageField"
             app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -107,15 +105,13 @@
             android:id="@+id/textView2"
             android:layout_width="131dp"
             android:layout_height="30dp"
-            android:layout_marginStart="28dp"
             android:text="@string/user_age_label"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-            app:layout_constraintHorizontal_bias="0.049"
-            app:layout_constraintLeft_toLeftOf="@id/nameField"
-            app:layout_constraintRight_toLeftOf="@id/ageField"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintLeft_toLeftOf="@id/imageView5"
+            app:layout_constraintRight_toRightOf="@id/imageView5"
             app:layout_constraintTop_toTopOf="@+id/imageView5"
             app:layout_constraintVertical_bias="0.739" />
 
@@ -127,7 +123,7 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintLeft_toLeftOf="@id/imageView5"
             app:layout_constraintRight_toRightOf="@id/imageView5"
             app:layout_constraintTop_toTopOf="@+id/imageView5"
@@ -141,9 +137,9 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintLeft_toLeftOf="@id/imageView5"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintRight_toRightOf="@id/imageView5"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:layout_constraintVertical_bias="0.558" />
 
